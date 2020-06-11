@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'libre_baskervilleregular';
+  src: url('/blog/fonts/librebaskerville-regular-webfont.woff2') format('woff2'),
+       url('/blog/fonts/librebaskerville-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+  color:#FFF;
+  font-family: 'libre_baskervilleregular';
+}
+/*FontAwsopm color*/
+.fa, .fas {
+  color: #e4573d;
+}
+.accent-color{
+  color: #e4573d;
+}
+.gold-color{
+  color: #c5a374;
+  font-size: 24px;
+}
+.pt-6{
+  padding-top: 3.6rem !important; 
+}
+.pb-6{
+    padding-top: 3.6rem !important;
+  }
+  /*Section colors*/
+  .secondary-bg{
+    background-color: #f4f3ec ;
+    color:rgb(14, 14, 14);
+  }
+  /*Nav*/
+  .navbar-collapse{
+    flex-grow: 0;
+  }
+  .navbar-nav{
+    font-family: 'Roboto';
+    align-items: center;
+    font-weight: 800;
+  }
+  .navbar{
+    box-shadow: none;
+  }
+  .active{
+    border-bottom: 2px solid #fff;
+    background-color: #fff0;
+}
+  
+  /* Slider Custom CSS */
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.404);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: 0%;
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+/*Presentation sections*/
+.secondary-text-color{
+  color:rgba(255,255,255,.7);
+}
+.homepage-firstSection{
+  background-image: url("/blog/img/background-01.png");
+  background-repeat: no-repeat;
+  background-position: center ;
+  background-size: cover;
+  box-shadow: inset 0px -7px 7px #f4f3ec;
+  position: relative;
+}
+.homepage-inner-section-1{
+height: 600px;
+}
+.homepage-inner-section-2{
+  
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+.homepage-inner-section-2 h1{
+
+font-size: 100px;
+line-height: 1.2em;
+padding-bottom : 26px ;
+margin-bottom: 30px;
+border-bottom: 2px #fff solid;
+}
+/*About-us container*/
+.card{
+  background-color: #fff0;
+  box-shadow: none;
+  text-align: left;
+}
+.author-img{
+  max-width: 100%;
+  height: auto;
+}
+.signature{
+  border: 2px solid rgba(255,255,255,.7);
+}
+/* Book Section */
+.homepage-secondSection{
+  background-color: #f4f3ec ;
+  color:rgb(14, 14, 14);
+  box-shadow: 1px -9px 21px #f4f3ec;
+position: relative;
+z-index: 112;
+}
+.homepage-secondSection img{
+  width: 100%;
+  height: auto;
+}
+.seconSection-heading  {
+  background-image: url('/blog/img/background-04.png');
+  padding-top: 55px ;
+  padding-bottom: 55px ;
+  background-position: center ;
+  background-repeat: no-repeat ;
+  background-size: cover ;
+}
+.article-text-color,.contact-btn-color{
+  color:#696969!important;
+}
+.chapitre-card{
+  border: 2px solid #696969 ;
+}
+.chapitre-card-2{
+  border: 2px dotted #696969 ;
+}
+/* Comment Section */
+
+.comment_content{
+  font-size: 1rem;
+}
+.comment_date{
+  font-size: 0.8rem;
+}
+
+/*Contact Section*/
+.contact-section{
+  background-color: #1e282d;
+}
+.contact-btn-color{
+  background-color: #f4f3ec;
+}
+
+
+/*Media Query*/
+@media (max-width:768px) {
+  /**/
+  .navbar-toggler{
+    z-index: 1000;
+    padding-left: 0px;
+  }
+  .navbar-collapse{
+    background-color: #1e282d;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    padding-top: 45px;
+  }
+  /*présetation section*/
+  .homepage-inner-section-1{
+    height: 12px;
+    }
+  .homepage-inner-section-2 h1{
+    font-size: 35px;
+      border-bottom: none;
+    }
+  .homepage-inner-section-3{
+    display: none;
+  }
+  /* Book Section */
+
+
+  }
+
