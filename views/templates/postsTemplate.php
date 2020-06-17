@@ -7,7 +7,7 @@
                                 <h3 class="accent-color">'.$article['title'].'</h3>
                                 <p>'.$article['content'].'</p>
                                 <p class="text-right">
-                                        <a class="text-right" href="/blog/?id='.$article['id'].'&amp;action=Chapitre">lire plus</a>
+                                        <a class="text-right" href="/?id='.$article['id'].'&amp;action=Chapitre">lire plus</a>
                                 </p>
                         </div>
                         ';
