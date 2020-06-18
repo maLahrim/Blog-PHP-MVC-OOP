@@ -11,10 +11,9 @@ class CommentManager extends Manager{
 
     public function insertComment($postId,$pseudo,$comment){
         $dataBase = $this->dbConnect();
-                $req = $dataBase->prepare('INSERT INTO comments (id,article_id,pseudo,content ) VALUES(?,?,?,?)');
-                $newComment = $req->execute(array('',$postId,$pseudo,$comment));
-                return $newComment;
-    //actuliser la page 
+        $req = $dataBase->prepare('INSERT INTO comments (id,article_id,pseudo,content ) VALUES(?,?,?,?)');
+        $newComment = $req->execute(array('',$postId,$pseudo,$comment));
+        return $newComment;
     }
 
 }

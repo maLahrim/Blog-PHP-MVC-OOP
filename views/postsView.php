@@ -7,4 +7,4 @@
         </div>
     </div>
 <?php $content = ob_get_clean();?>
-<?php require('views/templates/frontend/FrontEnd.php')?>
+<?php require('views/templates/frontend/frontEnd.php')?>

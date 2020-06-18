@@ -1,4 +1,4 @@
-<div id="contact"class=" row m-auto contact-section">
+<div id="contact" class=" row m-auto contact-section">
     <!--Section: Contact v.2-->
     <section class="col-md-6 mx-auto  py-4 pb-5">
         <!--Section heading-->
@@ -41,7 +41,7 @@
                         <!--Grid column-->
                         <div class="col-md-12">
                             <div class="md-form">
-                                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                <textarea id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
                                 <label for="message">Message</label>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'libre_baskervilleregular';
-  src: url('/blog/fonts/librebaskerville-regular-webfont.woff2') format('woff2'),
-       url('/blog/fonts/librebaskerville-regular-webfont.woff') format('woff');
+  src: url('/fonts/librebaskerville-regular-webfont.woff2') format('woff2'),
+       url('/fonts/librebaskerville-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -71,7 +71,7 @@ body{
   color:rgba(255,255,255,.7);
 }
 .homepage-firstSection{
-  background-image: url("/blog/img/background-01.png");
+  background-image: url("/img/background-01.png");
   background-repeat: no-repeat;
   background-position: center ;
   background-size: cover;
@@ -121,7 +121,7 @@ z-index: 112;
   height: auto;
 }
 .seconSection-heading  {
-  background-image: url('/blog/img/background-04.png');
+  background-image: url('/img/background-04.png');
   padding-top: 55px ;
   padding-bottom: 55px ;
   background-position: center ;

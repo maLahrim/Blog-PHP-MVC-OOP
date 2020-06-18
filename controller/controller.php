@@ -39,6 +39,6 @@
             die('Impossible d\'ajouter le commentaire !');
         }
         else {
-            header('Location: /blog/?id='.$postId.'&action=Chapitre');
+            header('Location: /?id='.$postId.'&action=Chapitre');
         }
     }
