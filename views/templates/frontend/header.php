@@ -3,7 +3,7 @@
     <nav class="navbar fixed-top navbar-expand-lg  pt-3 navbar-dark justify-content-lg-center">
       <!-- Collapse button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-        aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Collapsible content -->

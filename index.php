@@ -29,11 +29,9 @@ if (isset($_GET['action'])) {
     }
     else {
         echo "ddd";
-        var_dump($_POST);
         showIndex();
     }
 }
 else{
     showIndex();
-    var_dump($_POST);
 }

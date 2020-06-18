@@ -8,7 +8,7 @@
             echo $title.' -'.' Blog de Jean Forteroche';} 
         else 
         {
-            echo 'Blog de Jean Forteroche';;
+            echo 'Blog de Jean Forteroche';
         }
     }
 //Menu Functions
@@ -28,11 +28,11 @@ HTML;
     function nav_menu(string $listClass="",string $linkClass="" ):string
     {
         return 
-        nav_item('/blog/','ACCUEIL',$linkClass,$listClass).
-        nav_item('/blog/?action=posts','CHAPITRES',$linkClass,$listClass).
+        nav_item('/','ACCUEIL',$linkClass,$listClass).
+        nav_item('/?action=posts','CHAPITRES',$linkClass,$listClass).
         <<<HTML
-        <a class="main-logo px-4" href="/blog/" title="JF"> <img  src="/blog/img/logo-white.png" alt="JF"> </a>
+        <li><a class="main-logo px-4" href="/" title="JF"> <img  src="/img/logo-white.png" alt="JF"></a></li>
 HTML.
-        nav_item('/blog/#about-us','A PROPOS',$linkClass,$listClass).
-        nav_item('/blog/#contact','CONTACT',$linkClass,$listClass);
+        nav_item('/#about-us','A PROPOS',$linkClass,$listClass).
+        nav_item('/#contact','CONTACT',$linkClass,$listClass);
     }

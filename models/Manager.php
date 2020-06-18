@@ -5,6 +5,7 @@ class Manager{
         try
         {
                 $dataBase = new \PDO('mysql:host=localhost:3308;dbname=blog;charset=utf8', 'root', '');
+
         }
         catch (Exception $e)
         {
@@ -13,3 +14,4 @@ class Manager{
         return $dataBase;
     }
 }
+
