@@ -8,7 +8,7 @@ class CommentManager extends Manager{
         $response = $dataBase->query('SELECT * FROM comments WHERE article_id='.$postId.'');
         return $response;
     }
-
+    //il faut filtrer les inputs
     public function insertComment($postId,$pseudo,$comment){
         $dataBase = $this->dbConnect();
         $req = $dataBase->prepare('INSERT INTO comments (id,article_id,pseudo,content ) VALUES(?,?,?,?)');

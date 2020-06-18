@@ -1,13 +1,4 @@
-<!--il faut filtrer les inputs-->
-<h1 class="text-center accent-color ">
-<?=$singlePost['title']?>
-</h1>
-<p class="pb-5 text-center">
-Publié le <?=$singlePost['created_at']?>
-</p>
-<p class="pb-5">
-<?=$singlePost['content']?>
-</p>
+<?php showArticle($singlePost) //___includes/fonctions.php ?> 
 <div>
     <form class="border border-light p-3 p-lg-5" action="?id=<?=$postId?>&amp;action=addComment" method="post">
         <p class="h4 mb-4 text-left">Commentaire</p>        
@@ -20,7 +11,7 @@ Publié le <?=$singlePost['created_at']?>
     //loop post comments Comments
     while($comments = $commentsArray->fetch())
     {
-    echo showComments($comments); // includes/fonctions.php
+    showComments($comments); //___includes/fonctions.php
     }
     $commentsArray->closeCursor();
 ?>
