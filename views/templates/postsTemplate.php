@@ -13,4 +13,3 @@
                         ';
                 } 
         $posts->closeCursor();
-?>

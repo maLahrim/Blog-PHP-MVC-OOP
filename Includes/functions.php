@@ -36,3 +36,12 @@ HTML.
         nav_item('/#about-us','A PROPOS',$linkClass,$listClass).
         nav_item('/#contact','CONTACT',$linkClass,$listClass);
     }
+// Comments Functions
+function showComments($comments){
+    $commentsContent = '<div class="border border-light p-3 p-lg-5 mt-3 comment-section">
+    <h5 class="accent-color">'.htmlspecialchars($comments['pseudo']).'</h5>
+    <p class="comment_date">'.$comments['created_at'].'</p>
+    <p class="comment_content m-0">'.htmlspecialchars($comments['content']).'</p>
+    </div>';
+    echo $commentsContent;
+}
