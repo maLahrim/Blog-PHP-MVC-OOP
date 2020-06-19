@@ -1,6 +1,5 @@
 <?php 
 require_once('controller/controller.php');
-
 if (isset($_GET['action'])) {
 
     if($_GET['action'] == 'posts') {
@@ -51,3 +50,4 @@ else{
     // if Get action is not set
     showIndex(); //__controller/controller.php
 }
+

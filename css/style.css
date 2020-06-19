@@ -153,6 +153,12 @@ z-index: 112;
 .contact-btn-color{
   background-color: #f4f3ec;
 }
+/*Footer*/
+.footer_menu{
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+}
 
 
 /*Media Query*/

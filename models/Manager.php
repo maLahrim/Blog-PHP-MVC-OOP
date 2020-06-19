@@ -14,4 +14,3 @@ class Manager{
         return $dataBase;
     }
 }
-

@@ -31,8 +31,8 @@
           </li>
         </ul>
         <!-- Social buttons -->
-        <ul class="list-unstyled list-inline text-center">
-          <?= nav_menu('navbar-nav');?>
+        <ul class="list-unstyled list-inline text-center footer_menu">
+        <?= nav_menu()?>
         </ul>
       </div>
       <!-- Footer Elements -->

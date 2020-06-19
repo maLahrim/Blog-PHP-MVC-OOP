@@ -21,4 +21,4 @@ class PostManager extends Manager{
         $postsLenght = $numberOfPosts->fetch();
         return $postsLenght['total'];
     }
-};
+}

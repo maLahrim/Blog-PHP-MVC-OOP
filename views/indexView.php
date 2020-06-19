@@ -79,7 +79,7 @@
         </div>
         <div class="row m-0 p-0 col-lg-9 ">
             <!---->
-            <?php require("views/templates/postsTemplate.php")?>
+            <?php $posts->postsLoop()?>
             <div class="col-lg-12 pt-5">
                 <p class="text-center m-0">
                     <a class="btn" href="?action=posts">Voir plus</a>
@@ -91,4 +91,4 @@
 </div>
 <?php require('views/templates/frontend/contact.php')?>
 <?php $content = ob_get_clean();?>
-<?php require('views/templates/frontend/frontEnd.php')?>
+<?php require('views/templates/frontend/frontend.php')?>

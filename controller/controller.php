@@ -8,27 +8,22 @@
     require('includes/functions.php');
     // Controllers
     function showIndex(){
-        $postManager = new PostManager();
-        $posts = $postManager ->getPosts(); //___models/PostManager.php
+        $posts = new AllPosts(); //___models/PostManager.php
         require('views/indexView.php');
     }
 
     function showPosts(){
         $title = 'Chapitres';
         //get all posts
-        $postManager = new PostManager();
-        $posts = $postManager ->getPosts(); 
+        $posts = new AllPosts();
         require('views/postsView.php');
     }
 
     function showSinglePost($postId){
-        //get Post DATA
-        $postManager = new PostManager();
-        $singlePost = $postManager ->getSinglePost($postId);
-        $title = $singlePost['title'];
-        //get Post Comment
-        $commentManager = new CommentManager();
-        $commentsArray = $commentManager->getComments($postId);  //___models/CommentManager.php  
+        $SinglePost = new SinglePost($postId);
+        $article = $SinglePost ->showArticle($postId);
+        $title = $SinglePost->title();
+        $showComments = new ShowComments($postId);
         require('views/postView.php');
     }
 
@@ -42,3 +37,4 @@
             header('Location: /?id='.$postId.'&action=Chapitre');
         }
     }
+
