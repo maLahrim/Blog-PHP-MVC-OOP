@@ -1,33 +1,22 @@
 <?php
 class PostManager extends Manager{
-    private $_postId;
-    public function __construct($postId=''){
-        $this->_postId = $postId;
-    }
-    public function getPosts()
-    {
-        return $this->dbConnect()->query('SELECT * FROM posts');
-    }
-    public function totalPostsLenght(){
-        $numberOfPosts = $this->dbConnect()->query ('SELECT COUNT(*) as total FROM posts');
-        $postsLenght = $numberOfPosts->fetch();
-        return $postsLenght['total'];
-    }
     // All Posts
-    public function postsLoop(){
-        $postsData = $this->getPosts();
+    public static function getAllPosts(){
+        $postsData = self::dbConnect()->query('SELECT * FROM posts');
         $postsArray= $postsData->fetchAll();
-        foreach($postsArray as $post){
-            $post['content'] = substr($post['content'], 0, 160).'...';
-            require('views/templates/frontend/poststemplate.php');
-        };
         $postsData->closeCursor();
+        return $postsArray;
     }
     //Single Post
-    public function getSinglePost($id)
+    public static function getSinglePost($postId)
     {
-        $response  = $this->dbConnect()->query('SELECT title , created_at , content  FROM posts WHERE id='.$id.' ');
+        $response  = self::dbConnect()->query('SELECT title , created_at , content  FROM posts WHERE id='.$postId.' ');
         $requestedPost = $response->fetch();
         return $requestedPost ;
+    }
+    public static function totalPostsLenght(){
+        $numberOfPosts = self::dbConnect()->query ('SELECT COUNT(*) as total FROM posts');
+        $postsLenght = $numberOfPosts->fetch();
+        return $postsLenght['total'];
     }
 };

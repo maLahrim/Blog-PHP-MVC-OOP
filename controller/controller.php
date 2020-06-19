@@ -5,27 +5,25 @@
     {
     require 'models/'.$classe . '.php';
     }
-
     spl_autoload_register('classLoader');
-
-    function showIndex(){
+    function showIndex()
+    {
         $title = 'ACCEUIL';
-        $posts = new PostManager(); //___models/PostManager.php
+        $posts = new PostClass();
         require('views/indexView.php');
     }
 
-    function showPosts(){
+    function showPosts()
+    {
         $title = 'Chapitres';
-        //get all posts
-        $posts = new PostManager();
+        $posts = new PostClass();
         require('views/postsView.php');
     }
-
-    function showSinglePost($postId){
-        $singlePost = new PostManager($postId);
-        $article = $singlePost ->getSinglePost($postId);
-        $title = $article['title'];
-        $showComments = new CommentManager($postId);
+    function showSinglePost($postId)
+    {
+        $post = new PostClass($postId);
+        $post->showPost();
+        $title=$post->_title;
         require('views/postView.php');
     }
 

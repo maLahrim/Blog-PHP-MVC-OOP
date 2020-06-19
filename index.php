@@ -11,7 +11,7 @@ if (isset($_GET['action'])) {
     elseif ($_GET['action'] == 'Chapitre' AND isset($_GET['id']) ) {
 
         $postManager = new PostManager();
-        $postsLenght = $postManager->totalPostsLenght();
+        $postsLenght = $postManager::totalPostsLenght();
         $postId= filter_input ( INPUT_GET,'id',FILTER_VALIDATE_INT);
 
         if(isset($postId) AND is_int($postId) AND $postId <= $postsLenght and $postId > 0 ) {
@@ -28,7 +28,7 @@ if (isset($_GET['action'])) {
     elseif($_GET['action']== 'addComment' AND isset($_GET['id']) ) {
 
         $postManager = new PostManager();
-        $postsLenght = $postManager->totalPostsLenght();
+        $postsLenght = $postManager::totalPostsLenght();
         $postId= filter_input ( INPUT_GET,'id',FILTER_VALIDATE_INT);
 
         if(!empty($_POST['pseudo']) AND !empty($_POST['comment']) AND is_int($postId) AND $postId <= $postsLenght AND $postId > 0) {
