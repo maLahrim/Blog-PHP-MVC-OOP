@@ -1,5 +1,4 @@
 <?php
-namespace  Ayman\Blog\Models;  
 class Manager{
     protected function dbConnect(){
         try

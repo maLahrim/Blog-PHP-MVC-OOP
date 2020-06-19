@@ -10,7 +10,7 @@ if (isset($_GET['action'])) {
 
     elseif ($_GET['action'] == 'Chapitre' AND isset($_GET['id']) ) {
 
-        $postManager = new \Ayman\Blog\Models\PostManager();
+        $postManager = new PostManager();
         $postsLenght = $postManager->totalPostsLenght();
         $postId= filter_input ( INPUT_GET,'id',FILTER_VALIDATE_INT);
 
@@ -27,7 +27,7 @@ if (isset($_GET['action'])) {
     }
     elseif($_GET['action']== 'addComment' AND isset($_GET['id']) ) {
 
-        $postManager = new \Ayman\Blog\Models\PostManager();
+        $postManager = new PostManager();
         $postsLenght = $postManager->totalPostsLenght();
         $postId= filter_input ( INPUT_GET,'id',FILTER_VALIDATE_INT);
 

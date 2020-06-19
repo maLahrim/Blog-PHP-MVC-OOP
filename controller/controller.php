@@ -1,35 +1,37 @@
 <?php
-    // Get Data connection
-    require_once('models/PostManager.php');
-    require_once('models/CommentManager.php');
-    use \Ayman\Blog\Models\PostManager;
-    use \Ayman\Blog\Models\CommentManager;
-    // Main Functions
     require('includes/functions.php');
     // Controllers
+    function classLoader($classe)
+    {
+    require 'models/'.$classe . '.php';
+    }
+
+    spl_autoload_register('classLoader');
+
     function showIndex(){
-        $posts = new AllPosts(); //___models/PostManager.php
+        $title = 'ACCEUIL';
+        $posts = new PostManager(); //___models/PostManager.php
         require('views/indexView.php');
     }
 
     function showPosts(){
         $title = 'Chapitres';
         //get all posts
-        $posts = new AllPosts();
+        $posts = new PostManager();
         require('views/postsView.php');
     }
 
     function showSinglePost($postId){
-        $SinglePost = new SinglePost($postId);
-        $article = $SinglePost ->showArticle($postId);
-        $title = $SinglePost->title();
-        $showComments = new ShowComments($postId);
+        $singlePost = new PostManager($postId);
+        $article = $singlePost ->getSinglePost($postId);
+        $title = $article['title'];
+        $showComments = new CommentManager($postId);
         require('views/postView.php');
     }
 
     function addComment($postId,$pseudo,$comment){
-        $commentManager = new CommentManager();
-        $addComment=$commentManager->insertComment($postId,$pseudo,$comment);
+        $commentManager = new CommentManager($postId);
+        $addComment=$commentManager->insertComment($pseudo,$comment);
         if ($addComment === false) {
             die('Impossible d\'ajouter le commentaire !');
         }
@@ -37,4 +39,3 @@
             header('Location: /?id='.$postId.'&action=Chapitre');
         }
     }
-

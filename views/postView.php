@@ -2,7 +2,9 @@
 <div class="container special-color-dark pt-6">
     <div class=" m-auto  p-lg-5">
         <div>
-            <?=$article?> 
+            <h1 class="text-center accent-color "><?=$article['title']?></h1>
+            <p class="pb-5 text-center">Publié le <?=$article['created_at']?></p>
+            <p class="pb-5"><?=$article['content']?></p>
         <div>
             <form class="border border-light p-3 p-lg-5" action="?id=<?=$postId?>&amp;action=addComment" method="post">
                 <p class="h4 mb-4 text-left">Commentaire</p>        

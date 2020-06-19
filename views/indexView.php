@@ -1,4 +1,3 @@
-<?php $title = 'ACCEUIL'?>
 <?php ob_start();?>
 <!--Presentation Section -->
 <div class="container-fluid homepage-firstSection">
