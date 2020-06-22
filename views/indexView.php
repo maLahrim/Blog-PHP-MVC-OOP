@@ -79,7 +79,7 @@
         </div>
         <div class="row m-0 p-0 col-lg-9 ">
             <!---->
-            <?php $posts->showAllPosts()?>
+            <?php $posts->postsLoop()?>
             <div class="col-lg-12 pt-5">
                 <p class="text-center m-0">
                     <a class="btn" href="?action=posts">Voir plus</a>

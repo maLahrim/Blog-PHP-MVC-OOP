@@ -5,28 +5,50 @@
     {
     require 'models/'.$classe . '.php';
     }
+
     spl_autoload_register('classLoader');
+<<<<<<< HEAD
 //frontEnd Controllers
     function showIndex()
     {
         $title="Accueil";
         $posts = new PostClass();
+=======
+
+    function showIndex(){
+        $title = 'ACCEUIL';
+        $posts = new PostManager(); //___models/PostManager.php
+>>>>>>> parent of d4044a9... Comit before admin
         require('views/indexView.php');
 
+<<<<<<< HEAD
     }
     //Show aLL posts 
     function showPosts()
     {
+=======
+    function showPosts(){
+>>>>>>> parent of d4044a9... Comit before admin
         $title = 'Chapitres';
-        $posts = new PostClass();
+        //get all posts
+        $posts = new PostManager();
         require('views/postsView.php');
     }
+<<<<<<< HEAD
     //Show signle post
     function showPost($postId)
     {
         $post = new PostClass($postId);
         $post->showSinglePost();
         $title=$post->_title;
+=======
+
+    function showSinglePost($postId){
+        $singlePost = new PostManager($postId);
+        $article = $singlePost ->getSinglePost($postId);
+        $title = $article['title'];
+        $showComments = new CommentManager($postId);
+>>>>>>> parent of d4044a9... Comit before admin
         require('views/postView.php');
     }
 

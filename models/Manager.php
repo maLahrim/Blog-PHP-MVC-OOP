@@ -1,14 +1,10 @@
 <?php
 class Manager{
-    const HOST = 'localhost:3308';
-    const USER= 'root';
-    const PASSWORD = '';
-    const DBNAME = 'blog';
-    protected static function dbConnect(){
+    protected function dbConnect(){
         try
         {
             //$dataBase = new \PDO('mysql:host=localhost;dbname=autolimo_blog;charset=utf8', 'autolimo_blog', '@Ayman010162');
-            $dataBase = new \PDO('mysql:host='.self::HOST.';dbname='.self::DBNAME.';charset=utf8', self::USER, self::PASSWORD);
+            $dataBase = new \PDO('mysql:host=localhost:3308;dbname=blog;charset=utf8', 'root', '');
         }
         catch (Exception $e)
         {
