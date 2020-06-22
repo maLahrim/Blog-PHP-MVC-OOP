@@ -8,10 +8,6 @@ class PostClass {
     public function __construct($postId=""){
         $this->_postId = $postId;
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d6c928b5d216b85e4d61fb0d672c859ffe5cbeca
     public function showAllPosts($view='front')
     {
         $postsArray = PostManager::getAllPosts(); 
@@ -29,31 +25,11 @@ class PostClass {
         };
     }
     public function showSinglePost()
-<<<<<<< HEAD
-=======
-=======
-    public function showAllPosts()
-    {
-        $postsArray = PostManager::getAllPosts();
-        foreach($postsArray as $post){
-            $this->_postId = $post['id'];
-            $this->_title = $post['title'];
-            $this->_content = substr($post['content'], 0, 160).'...';
-            require('views/templates/frontend/poststemplate.php');
-        };
-    }
-    public function showPost()
->>>>>>> d4044a9ae67304854dc321ce8f65cb4525f75dbd
->>>>>>> d6c928b5d216b85e4d61fb0d672c859ffe5cbeca
     {
         $post = PostManager::getSinglePost($this->_postId);
         $this->_title = $post['title'];
         $this->_content = $post['content'];
         $this->_date= $post['created_at'];
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d6c928b5d216b85e4d61fb0d672c859ffe5cbeca
         $this->_id= $this->_postId;
         return $post;
     }
@@ -82,19 +58,4 @@ class PostClass {
             }
         };
     }
-<<<<<<< HEAD
-=======
-=======
-        return $post;
-    }
-    public function showComments()
-    {
-        $this->_commentsArray = CommentManager::getComments($this->_postId);
-        foreach($this->_commentsArray as $comment){
-            echo CommentManager::commentTemplate($comment['pseudo'],$comment['created_at'],$comment['content']);
-        };
-    }
-
->>>>>>> d4044a9ae67304854dc321ce8f65cb4525f75dbd
->>>>>>> d6c928b5d216b85e4d61fb0d672c859ffe5cbeca
 }
