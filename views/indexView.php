@@ -1,3 +1,4 @@
+
 <?php ob_start();?>
 <!--Presentation Section -->
 <div class="container-fluid homepage-firstSection">
@@ -78,7 +79,7 @@
         </div>
         <div class="row m-0 p-0 col-lg-9 ">
             <!---->
-            <?php $posts->postsLoop()?>
+            <?php $posts->showAllPosts()?>
             <div class="col-lg-12 pt-5">
                 <p class="text-center m-0">
                     <a class="btn" href="?action=posts">Voir plus</a>

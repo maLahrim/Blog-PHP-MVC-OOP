@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>
-        <?=pageTitle($title);?> 
+        <?=pageTitle($title);?>
         </title>
         <!-- MDB icon -->
         <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
@@ -18,9 +18,9 @@
         <!-- Material Design Bootstrap -->
         <link rel="stylesheet" href="css/mdb.min.css">
         <!-- Your custom styles (optional) -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/blogstyle.css">
     </head>
-    <body>
+    <body onscroll="menuStyle()">
         <?php require('views/templates/frontend/header.php')?>
         <section class="container_fluid special-color-dark p-0">
         <!--/Dynamic content-->
@@ -29,3 +29,7 @@
         <!-- Footer -->
         <?php require('views/templates/frontend/footer.php')?>
         <!-- Called by Indexview - postsView - postView -->
+        </body>
+
+
+</html>

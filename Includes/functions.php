@@ -4,10 +4,10 @@
     {
         if (isset($title))
         {
-            echo strtoupper($title).' -'.' Blog de Jean Forteroche';} 
+            return strtoupper($title).' - Blog de Jean Forteroche';} 
         else 
         {
-            echo 'Blog de Jean Forteroche';
+            return 'Blog de Jean Forteroche';
         }
     }
     //Menu Functions

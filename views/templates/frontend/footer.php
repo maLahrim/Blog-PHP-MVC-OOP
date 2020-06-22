@@ -52,7 +52,5 @@
     <!-- MDB core JavaScript -->
     <script  src="js/mdb.min.js"></script>
     <!-- Your custom scripts (optional) -->
-    <script ></script>
-    </body>
+    <script  src="js/blogscript.js"></script>
 
-    </html>

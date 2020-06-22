@@ -1,6 +1,6 @@
 <header>
 <!--Navbar-->
-    <nav class="navbar fixed-top navbar-expand-lg  pt-3 navbar-dark justify-content-lg-center">
+    <nav id='main-nav' class="navbar fixed-top navbar-expand-lg  pt-3 navbar-dark justify-content-lg-center">
       <!-- Collapse button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
          aria-expanded="false" aria-label="Toggle navigation">
