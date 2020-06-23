@@ -22,6 +22,12 @@
   color: #000;
   font-size: 27px;
 }
+.back-card:nth-child(odd){
+background-color: rgba(0,0,0,0.1)
+}
+.back-card{
+  font-size: 12px;
+  }
 
 @media (min-width: 1200px) {
   .navbar,

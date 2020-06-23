@@ -38,12 +38,15 @@ class PostClass {
         $commentsArray = CommentManager::getAllComments();
         foreach($commentsArray as $comment){
             echo'
-            <tr>
-            <th scope="row">Chapitre '.$comment['article_id'].'</th>
-            <td>'.$comment['pseudo'].'</td>
-            <td>'.$comment['content'].'</td>
-            <td>'.$comment['created_at'].'</td>
-            </tr>';
+            <div class="d-flex back-card p-2">
+            <p class="w-25 text-center d-flex flex-column">
+            <span>Chapitre '.$comment['article_id'].'</span>
+            <span>Par: '.$comment['pseudo'].'</span>
+            <span>'.$comment['created_at'].'</span>
+            </p>
+            <p class="w-75">'.$comment['content'].'</p>
+
+            </div>';
         };
     }
     public function showPostComments($view='front')

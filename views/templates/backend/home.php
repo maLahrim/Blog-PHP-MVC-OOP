@@ -1,28 +1,23 @@
 <?php ob_start();?>
 <div class="row wow fadeIn">
-    <div class="col-12 mb-4">
+<!--Grid column-->
+    <div class="col-md-6 mb-4">
+        <!--Card-->
         <div class="card">
-            <div class="card-body">
+            <!--Card content-->
+            <div class="card-body p-0">
+            <h2  class="h2 py-2 white-text blue-gradient color-block text-center">CHAPITRES</h2>
                 <?php $posts->showAllPosts('back')?>
             </div>
         </div>
+        <!--/.Card-->
     </div>
-    <div class="col-12">
+<!--Grid column-->
+    <div class="col-md-6 mb-4">
         <div class="card">
-            <div class="card-body">
-                <table class="table table-hover">
-                    <thead class="blue lighten-4">
-                        <tr>
-                            <th>Chapitres</th>
-                            <th>Pseudo</th>
-                            <th>Commentaire</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                <tbody>
+            <div class="card-body p-0">
+                <h2 class="h2 py-2 white-text blue-gradient color-block text-center" >Commentaires</h2>
                     <?php $posts->showAllComments()?>
-                </tbody>
-                </table>
             </div>
         </div>
     </div>

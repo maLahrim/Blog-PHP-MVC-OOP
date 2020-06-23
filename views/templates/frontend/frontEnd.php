@@ -28,6 +28,16 @@
         </section>
         <!-- Footer -->
         <?php require('views/templates/frontend/footer.php')?>
+            <!-- jQuery -->
+    <script  src="js/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script  src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script  src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script  src="js/mdb.min.js"></script>
+    <!-- Your custom scripts (optional) -->
+    <script  src="js/blogscript.js"></script>
         <!-- Called by Indexview - postsView - postView -->
         </body>
 
