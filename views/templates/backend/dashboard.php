@@ -67,8 +67,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/"
-                                class="nav-link border border-light rounded waves-effect" target="_blank">
+                            <a href="?action=logout"
+                                class="nav-link border border-light rounded waves-effect">
                                 <i class="fab fa-sign-out mr-2"></i>Déconnexion
                             </a>
                         </li>
@@ -127,7 +127,20 @@
 
             </div>
             <!-- Heading -->
-            <?=$content?>
+            <?=$content;?>
+            <?php
+
+            if(isset($postId)){
+                echo
+                '
+                <div>
+                <h2 class="h2 py-2 white-text blue-gradient color-block text-center" >Commentaires</h2>
+                <div>';
+                echo $post->showPostComments('back');
+            }
+            ?>
+
+
 
         </div>
     </main>

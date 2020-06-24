@@ -8,19 +8,19 @@ class PostClass {
     public function __construct($postId=""){
         $this->_postId = $postId;
     }
-    public function showAllPosts($view='front')
+    public function showAllPosts($view)
     {
-        $postsArray = PostManager::getAllPosts(); 
+        $postsArray = PostManager::getAllPosts();
         foreach($postsArray as $post){
             $this->_postId = $post['id'];
             $this->_title = $post['title'];
             $this->_date = $post['created_at'];
             $this->_content = substr($post['content'], 0, 160).'...';
-            require('views/templates/poststemplate.php');
+            require('views/templates/common/poststemplate.php');
             if($view == 'front'){
-            echo $frontPosts;
+            echo $frontPosts; // common/poststemplate.php
             }else{
-            echo $backPosts;
+            echo $backPosts; // common/poststemplate.php
             }
         };
     }
@@ -33,32 +33,29 @@ class PostClass {
         $this->_id= $this->_postId;
         return $post;
     }
-    public function showAllComments()
+    public function showAllComments($view)
     {
         $commentsArray = CommentManager::getAllComments();
-        foreach($commentsArray as $comment){
-            echo'
-            <div class="d-flex back-card p-2">
-            <p class="w-25 text-center d-flex flex-column">
-            <span>Chapitre '.$comment['article_id'].'</span>
-            <span>Par: '.$comment['pseudo'].'</span>
-            <span>'.$comment['created_at'].'</span>
-            </p>
-            <p class="w-75">'.$comment['content'].'</p>
-
-            </div>';
+            foreach($commentsArray as $comment){
+                echo commentsTemplate($view,$comment);//common/commentstemplate.php
         };
     }
-    public function showPostComments($view='front')
+    public function showSignaledComments()
+    {   
+        $commentsArray = CommentManager::getAllComments();
+
+            foreach($commentsArray as $comment){   
+                if($comment['Signalement']==1){
+                    echo commentsTemplate('signaled',$comment);
+                }      
+        };
+    }
+    public function showPostComments($view)
     {
-        $this->_commentsArray = CommentManager::getPostComments($this->_postId);
-        foreach($this->_commentsArray as $comment){
-            require('views/templates/commentstemplate.php');
-            if($view == 'front'){
-                echo $frontComments;
-            }else{
-                echo $backComments;
-            }
+        $commentsArray = CommentManager::getPostComments($this->_postId);
+        foreach($commentsArray as $comment){
+
+           echo commentsTemplate($view,$comment); //common/commentstemplate.php
         };
     }
 }

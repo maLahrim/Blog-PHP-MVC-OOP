@@ -1,4 +1,5 @@
 <?php
+//used in PostClass
 $frontPosts='
 <div class="col-lg-4 p-0 px-lg-3 pt-3">
     <h3 class="accent-color">'.$this->_title.'</h3>
@@ -20,7 +21,7 @@ $backPosts='
         </div>
         <div class="d-flex justify-content-between">
             <a href="/?action=admin&chapitre='.$this->_postId.'" class="btn btn-warning p-1 ">Modifier</a>
-            <a href="/?action=admin&delete='.$this->_postId.'" type="button" class="btn btn-danger p-1 ">Supprimer</a>
+            <a href="/?action=admin&deletePost='.$this->_postId.'" type="button" class="btn btn-danger p-1 ">Supprimer</a>
         </div>
     </div>
 
