@@ -6,8 +6,6 @@ class Manager{
     const PASSWORD = '@Ayman010162';
     const DBNAME = 'autolimo_blog';
     */
-    
-    
     const HOST = 'localhost:3308';
     const USER= 'root';
     const PASSWORD = '';

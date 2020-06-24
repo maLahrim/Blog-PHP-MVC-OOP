@@ -12,16 +12,16 @@
         <div class="row justify-content-center align-items-center w-responsive pt-3 m-auto homepage-inner-section-3 ">
             <!--<div class="row justify-content-between homepage-inner-section-3 w-responsive pt-5">-->
             <a class="px-2" title="" target="_blank" href="#"> 
-                <img src="img/partner/partner-01.png" alt=""> 
+                <img src="public/img/partner/partner-01.png" alt=""> 
             </a>
             <a class="px-2" title="" target="_blank" href="#"> 
-                <img src="img/partner/partner-02.png" alt=""> 
+                <img src="public/img/partner/partner-02.png" alt=""> 
             </a>
             <a class="px-2" title="" target="_blank" href="#"> 
-                <img src="img/partner/partner-03.png" alt=""> 
+                <img src="public/img/partner/partner-03.png" alt=""> 
             </a>
             <a class="px-2" title="" target="_blank" href="#"> 
-                <img src="img/partner/partner-04.png" alt=""> 
+                <img src="public/img/partner/partner-04.png" alt=""> 
             </a>
         </div>
         <div class="container p-lg-5 text-left">
@@ -48,7 +48,7 @@
                 <div class="col-12 col-lg-4 p-0 my-3">
                     <div class="card text-center">
                         <div class="card-body p-0">
-                            <img class="author-img" src="img/single-image-11.jpg" alt="single-image-11" title="single-image-11">
+                            <img class="author-img" src="public/img/single-image-11.jpg" alt="single-image-11" title="single-image-11">
                         </div>
                     </div>
                 </div> 
@@ -56,7 +56,7 @@
                     <div class="card">
                         <div class="card-body signature ">
                             <p class="font-italic text-center gold-color" style="line-height: 2;">” Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ipsam cupiditate laudantium adipisci minima, velit sapiente”</p>
-                            <p class="text-center mb-0"><img src="img/single-image-12-300x203.png" alt="" width="106" height="72"></p>
+                            <p class="text-center mb-0"><img src="public/img/single-image-12-300x203.png" alt="" width="106" height="72"></p>
                         </div>
                     </div>
                 </div>
@@ -75,11 +75,11 @@
     </div>
     <div class="row col-12 m-auto article-text-color align-items-start">
         <div class="col-lg-3  p-0 pb-3 pt-lg-3 pb-lg-0 pr-lg-5">
-            <img src="img/Billet-Simple-Pour-Alaska.png" alt="book">
+            <img src="public/img/Billet-Simple-Pour-Alaska.png" alt="book">
         </div>
         <div class="row m-0 p-0 col-lg-9 ">
             <!---->
-            <?php $posts->showAllPosts()?>
+            <?php $posts->showAllPosts('front')?>
             <div class="col-lg-12 pt-5">
                 <p class="text-center m-0">
                     <a class="btn" href="?action=posts">Voir plus</a>

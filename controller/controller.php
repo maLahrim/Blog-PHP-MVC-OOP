@@ -1,9 +1,11 @@
 <?php
     require('includes/functions.php');
+    require('views/templates/common/commentstemplate.php');
     // Controllers
     function classLoader($classe)
     {
     require 'models/'.$classe . '.php';
+
     }
     spl_autoload_register('classLoader');
 //frontEnd Controllers
@@ -12,7 +14,6 @@
         $title="Accueil";
         $posts = new PostClass();
         require('views/indexView.php');
-
     }
     //Show aLL posts 
     function showPosts()
@@ -39,6 +40,16 @@
         else {
             header('Location: /?id='.$postId.'&action=Chapitre');
         }
+    }
+    function signalctr($postId,$commentId){
+        $updatePost = CommentManager::signalComment($commentId);
+        if ($updatePost === false) {
+            die('Impossible de signaler!');
+        }
+        else {
+            header('Location: /?id='.$postId.'&action=Chapitre');
+        }
+
     }
 //Backend Controllers
     function showAdmin(){
@@ -69,6 +80,15 @@
     }
     function deletepost($postId){
         $deletPost = PostManager::deletePost($postId);
+        if ($deletPost === false) {
+            die('Impossible d\'ajouter le chapitre !');
+        }
+        else {
+            header('Location: /?action=admin');
+        }
+    }
+    function deleteComment($commentId){
+        $deletPost = CommentManager::deleteComment($commentId);
         if ($deletPost === false) {
             die('Impossible d\'ajouter le chapitre !');
         }

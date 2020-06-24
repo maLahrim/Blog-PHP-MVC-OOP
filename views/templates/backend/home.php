@@ -16,8 +16,10 @@
     <div class="col-md-6 mb-4">
         <div class="card">
             <div class="card-body p-0">
+            <h2 class="h2 py-2 white-text young-passion-gradient color-block text-center" >Signalement</h2>
+            <?php $posts->showSignaledComments() ?>
                 <h2 class="h2 py-2 white-text blue-gradient color-block text-center" >Commentaires</h2>
-                    <?php $posts->showAllComments()?>
+                    <?php $posts->showAllComments('back')?>
             </div>
         </div>
     </div>

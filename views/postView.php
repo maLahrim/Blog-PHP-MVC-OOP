@@ -13,7 +13,10 @@
                 <button class="btn btn-info btn-block" type="submit">Envoyer</button>
             </form>
         </div>
-        <?php $post->showPostComments();?>
+        <?php 
+        //PostClass.php
+        $post->showPostComments('front');
+        ?> 
         </div>
     </div>
 </div>

@@ -20,6 +20,17 @@ class PostManager extends Manager{
         $postsLenght = $request->fetch();
         return $postsLenght['total'];
     }
+    public static function allPostId($postId){
+        $request = self::dbConnect()->query ('SELECT id FROM posts');
+        $allPostId = $request->fetchAll();
+        $request->closeCursor();
+        //var_dump($allPostId);
+        foreach($allPostId as $elt){
+            if(in_array($postId,$elt)){
+                return true;
+            }
+        }
+    }
     // insert post
     public static function insertPost($title,$content){
         $request = self::dbConnect()->prepare('INSERT INTO posts (id,title,content,created_at) VALUES(?,?,?,CURRENT_TIMESTAMP)');
@@ -28,7 +39,9 @@ class PostManager extends Manager{
     }
     //Delet post
     public static function  deletePost($postId){
-        $request=  self::dbConnect()->query ('DELETE FROM posts WHERE id='.$postId.'');
+        //relation parent enfant clef etrangére.
+        //$request=  self::dbConnect()->query ('DELETE a.* ,b.* FROM posts a JOIN comments b ON a.id = b.article_id WHERE a.id='.$postId.'');
+        $request=  self::dbConnect()->query ('DELETE FROM posts WHERE id='.$postId.''); // relation Table posts.id = comments.article_id Delet Cascad
         return $request;
     }
     //update Post
@@ -41,4 +54,5 @@ class PostManager extends Manager{
             ));
         return $request;
     }
+    
 };

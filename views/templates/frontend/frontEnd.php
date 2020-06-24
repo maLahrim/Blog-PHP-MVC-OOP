@@ -8,17 +8,17 @@
         <?=pageTitle($title);?>
         </title>
         <!-- MDB icon -->
-        <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+        <link rel="icon" href="public/img/mdb-favicon.ico" type="image/x-icon">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
         <!-- Google Fonts Roboto -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
         <!-- Material Design Bootstrap -->
-        <link rel="stylesheet" href="css/mdb.min.css">
+        <link rel="stylesheet" href="public/css/mdb.min.css">
         <!-- Your custom styles (optional) -->
-        <link rel="stylesheet" href="css/blogstyle.css">
+        <link rel="stylesheet" href="public/css/blogstyle.css">
     </head>
     <body onscroll="menuStyle()">
         <?php require('views/templates/frontend/header.php')?>
@@ -29,15 +29,15 @@
         <!-- Footer -->
         <?php require('views/templates/frontend/footer.php')?>
             <!-- jQuery -->
-    <script  src="js/jquery.min.js"></script>
+    <script  src="public/js/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script  src="js/popper.min.js"></script>
+    <script  src="publicjs/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script  src="js/bootstrap.min.js"></script>
+    <script  src="public/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script  src="js/mdb.min.js"></script>
+    <script  src="public/js/mdb.min.js"></script>
     <!-- Your custom scripts (optional) -->
-    <script  src="js/blogscript.js"></script>
+    <script  src="public/js/blogscript.js"></script>
         <!-- Called by Indexview - postsView - postView -->
         </body>
 

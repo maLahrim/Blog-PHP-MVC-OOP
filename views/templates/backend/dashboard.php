@@ -8,12 +8,12 @@
     <title>        <?=pageTitle($title);?></title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="/css/mdb.min.css" rel="stylesheet">
+    <link href="/public/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="/css/style.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="/public/css/style.min.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
@@ -67,8 +67,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/"
-                                class="nav-link border border-light rounded waves-effect" target="_blank">
+                            <a href="?action=logout"
+                                class="nav-link border border-light rounded waves-effect">
                                 <i class="fab fa-sign-out mr-2"></i>Déconnexion
                             </a>
                         </li>
@@ -127,7 +127,20 @@
 
             </div>
             <!-- Heading -->
-            <?=$content?>
+            <?=$content;?>
+            <?php
+
+            if(isset($postId)){
+                echo
+                '
+                <div>
+                <h2 class="h2 py-2 white-text blue-gradient color-block text-center" >Commentaires</h2>
+                <div>';
+                echo $post->showPostComments('back');
+            }
+            ?>
+
+
 
         </div>
     </main>
@@ -138,15 +151,15 @@
     <!--/.Footer-->
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="public/js/jquery-3.4.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="/js/popper.min.js"></script>
+    <script type="text/javascript" src="public/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="/js/mdb.min.js"></script>
+    <script type="text/javascript" src="public/js/mdb.min.js"></script>
     <!-- Initializations -->
-    <script type="text/javascript" src="/js/blogscript.js"></script>
+    <script type="text/javascript" src="public/js/blogscript.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse justify-content-center" id="basicExampleNav">
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
-          <?= nav_menu('/img/logo-white.png')?>
+          <?= nav_menu('/public/img/logo-white.png')?>
         </ul>
         <!-- Links -->
       </div>
