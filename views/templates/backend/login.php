@@ -7,10 +7,17 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title></title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<<<<<<< HEAD
     <link href="public/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/css/mdb.min.css" rel="stylesheet">
     <link href="public/css/style.min.css" rel="stylesheet">
     <link href="public/css/style.css" rel="stylesheet">
+=======
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/mdb.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+>>>>>>> e5d6055d272d0ac45b2230276f443bec7d2e355f
 </head>
 <!-- Default form login -->
 <body>

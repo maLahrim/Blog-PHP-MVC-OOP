@@ -1,4 +1,5 @@
 <?php 
+
 require_once('controller/controller.php');
 require_once('controller/PostClass.php');
 if (!isset($_GET['action'])) 
