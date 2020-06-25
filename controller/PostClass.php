@@ -16,7 +16,7 @@ class PostClass {
             $this->_title = $post['title'];
             $this->_date = $post['created_at'];
             $this->_content = substr($post['content'], 0, 160).'...';
-            require('views/templates/common/poststemplate.php');
+            require('view/templates/common/poststemplate.php');
             if($view == 'front'){
             echo $frontPosts; // common/poststemplate.php
             }else{

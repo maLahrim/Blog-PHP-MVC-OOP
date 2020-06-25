@@ -1,5 +1,4 @@
 <?php 
-
 require_once('controller/controller.php');
 require_once('controller/PostClass.php');
 if (!isset($_GET['action'])) 
@@ -24,18 +23,12 @@ else
                 showPost($postId);
             }else{
                 $commentId = filter_input ( INPUT_GET,'signaler',FILTER_VALIDATE_INT);
-                echo"
-                <script type=text/javascript >
-                alert('Commentaire signalé');
-                </script> 
-                ";
                 signalctr($postId,$commentId);
             }
         }
         else 
         {
-            $title = 'Chapitre indisponible';
-            echo '<h1 class="text-center accent-color ">Chapitre indiponible</h1>';
+            notFound();
         }        
     }
     elseif($_GET['action']== 'addComment' AND isset($_GET['id']) ) 
@@ -48,19 +41,28 @@ else
         }
         else
         {
-            echo "commentaire";
+            echo "
+            <script type='text/javascript'>
+            alert(\"Veuillez remplire tous les champs\")
+            window.location = \"/?id=$postId&action=Chapitre\";
+            </script>";
         }
     }
     //backend
     elseif($_GET['action']== 'admin')
     {   
+        $user = Manager::getUser();
         session_start();
         if(!empty($_POST['email']) AND !empty($_POST['password'])){
         $_SESSION['email']= $_POST['email'];
         $_SESSION['password']= $_POST['password'];
         }
-        if(!empty($_SESSION['email']) AND !empty($_SESSION['password'])AND $_SESSION['email']=='a@a.fr' AND $_SESSION['password']='1234' )
-        {
+        if(
+            !empty($_SESSION['email']) AND !empty($_SESSION['password'])
+            AND $_SESSION['email']==$user['user'] 
+            AND password_verify($_SESSION["password"],$user['password']) 
+        ){
+            
             if(isset($_GET['chapitre']) AND !isset($_GET['db']) )
             {
                 $postId= filter_input ( INPUT_GET,'chapitre',FILTER_VALIDATE_INT);
@@ -92,7 +94,7 @@ else
                 showAdmin();
             }
         }else{
-            require('views/templates/backend/login.php');
+            require('view/templates/backend/login.php');
         }
     }
     elseif($_GET['action']== 'logout')

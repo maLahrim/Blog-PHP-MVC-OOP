@@ -29,4 +29,4 @@
         </form>'
         ;
 }
-require('views/templates/backend/dashboard.php');
+require('view/templates/backend/dashboard.php');

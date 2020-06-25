@@ -1,6 +1,6 @@
 <?php
     require('includes/functions.php');
-    require('views/templates/common/commentstemplate.php');
+    require('view/templates/common/commentstemplate.php');
     // Controllers
     function classLoader($classe)
     {
@@ -13,14 +13,14 @@
     {
         $title="Accueil";
         $posts = new PostClass();
-        require('views/indexView.php');
+        require('view/indexView.php');
     }
     //Show aLL posts 
     function showPosts()
     {
         $title = 'Chapitres';
         $posts = new PostClass();
-        require('views/postsView.php');
+        require('view/postsView.php');
     }
     //Show signle post
     function showPost($postId)
@@ -28,7 +28,7 @@
         $post = new PostClass($postId);
         $post->showSinglePost();
         $title=$post->_title;
-        require('views/postView.php');
+        require('view/postView.php');
     }
 
     function addComment($postId,$pseudo,$comment){
@@ -38,7 +38,11 @@
             die('Impossible d\'ajouter le commentaire !');
         }
         else {
-            header('Location: /?id='.$postId.'&action=Chapitre');
+            echo "
+            <script type='text/javascript'>
+            alert(\"Votre commentaire a bien été envoyé \")
+            window.location = \"/?id=$postId&action=Chapitre\";
+            </script>";
         }
     }
     function signalctr($postId,$commentId){
@@ -47,27 +51,30 @@
             die('Impossible de signaler!');
         }
         else {
-            header('Location: /?id='.$postId.'&action=Chapitre');
+            echo "
+            <script type='text/javascript'>
+            alert(\"merci d'avoir signalé se commentaire\")
+            window.location = \"/?id=$postId&action=Chapitre\";
+            </script>";
         }
-
     }
 //Backend Controllers
     function showAdmin(){
         $title = 'administration';
         $posts = new PostClass();        
-        require('views/templates/backend/home.php');
+        require('view/templates/backend/home.php');
     }
     function newPost(){
         $view='newpost';
         $title='Nouveau Chapitre';
-        require('views/templates/backend/post.php');
+        require('view/templates/backend/post.php');
     }
     function editPost($postId){
         $post = new PostClass($postId);
         $post->showSinglePost();
         $title=$post->_title;
         $view='editpost';
-        require('views/templates/backend/post.php');
+        require('view/templates/backend/post.php');
     }
     function insertPost ($title,$content){
         $insertPost=PostManager::insertPost($title,$content);
@@ -75,7 +82,11 @@
             die('Impossible d\'ajouter le chapitre !');
         }
         else {
-            header('Location: /?action=admin');
+            echo "
+            <script type='text/javascript'>
+            alert(\"Votre chapitre a bien été publié\")
+            window.location = \"/?action=admin\";
+            </script>";
         }
     }
     function deletepost($postId){
@@ -84,7 +95,11 @@
             die('Impossible d\'ajouter le chapitre !');
         }
         else {
-            header('Location: /?action=admin');
+            echo "
+            <script type='text/javascript'>
+            alert(\"Votre chapitre a bien été supprimé\")
+            window.location = \"/?action=admin\";
+            </script>";
         }
     }
     function deleteComment($commentId){
@@ -93,7 +108,11 @@
             die('Impossible d\'ajouter le chapitre !');
         }
         else {
-            header('Location: /?action=admin');
+            echo "
+            <script type='text/javascript'>
+            alert(\"Commentaire supprimé\")
+            window.location = \"/?action=admin\";
+            </script>";
         }
     }
 //Update Post
@@ -103,6 +122,15 @@
             die('Impossible de mettre à jour !');
         }
         else {
-            header('Location: /?action=admin&chapitre='.$postId.'');
+            echo "
+            <script type='text/javascript'>
+            alert(\"Votre chapitre a bien été mis à jour\")
+            window.location = \"/?action=admin&chapitre=$postId\";
+            </script>";
         }
+    }
+    // not fount function 
+    function notFound(){
+        $title = "404 - Not Found";
+        require('view/templates/common/404.php');
     }

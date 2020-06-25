@@ -35,7 +35,7 @@ class PostManager extends Manager{
     public static function insertPost($title,$content){
         $request = self::dbConnect()->prepare('INSERT INTO posts (id,title,content,created_at) VALUES(?,?,?,CURRENT_TIMESTAMP)');
         $newComment = $request->execute(array('',$title,$content));
-        return $newPost;
+        return $newComment;
     }
     //Delet post
     public static function  deletePost($postId){

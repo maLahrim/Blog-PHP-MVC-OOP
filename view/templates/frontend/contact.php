@@ -1,6 +1,6 @@
-<div id="contact" class=" row m-auto contact-section">
+<section id="contact" class=" row m-auto contact-section">
     <!--Section: Contact v.2-->
-    <section class="col-md-6 mx-auto  py-4 pb-5">
+    <div class="col-md-6 mx-auto  py-4 pb-5">
         <!--Section heading-->
         <h2 class="h1-responsive font-weight-bold text-center my-4">Contact</h2>
         <!--Section description-->
@@ -55,6 +55,6 @@
             </div>
             <!--Grid column-->
         </div>
-    </section>
-</div>
+    </div>
+</section>
 <!--Section: Contact v.2-->

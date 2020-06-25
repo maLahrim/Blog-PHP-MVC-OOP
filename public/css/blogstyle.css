@@ -6,6 +6,10 @@
   font-style: normal;
 
 }
+html,body{
+  height: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -169,6 +173,13 @@ z-index: 112;
   justify-content: center;
   font-size: 12px;
 }
+/*404 not found*/
+#not_found h1,h2{
+ font-size: 70px;
+}
+#not_found p{
+  font-size: 20px;
+ }
 
 /*Media Query*/
 @media (max-width:768px) {

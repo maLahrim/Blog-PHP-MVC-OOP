@@ -22,4 +22,11 @@ class Manager{
         }
         return $dataBase;
     }
+    public static function getUser()
+    {
+        $response  = self::dbConnect()->query('SELECT user , password   FROM users ');
+        $user = $response->fetch();
+        
+        return $user ;
+    }
 }

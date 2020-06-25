@@ -1,7 +1,7 @@
 <?php ob_start();?>
-<div class="container special-color-dark pt-6">
+<section class="container special-color-dark pt-6">
     <div class=" m-auto  p-lg-5">
-        <div class='postview'>
+        <article class='postview'>
             <h1 class="text-center accent-color "><?=$post->_title?></h1>
             <p class="text-center">Publié le <?=$post->_date?></p>
             <?=$post->_content?>
@@ -17,8 +17,8 @@
         //PostClass.php
         $post->showPostComments('front');
         ?> 
-        </div>
+        </article>
     </div>
-</div>
+</section>
 <?php $content = ob_get_clean();?>
-<?php require('views/templates/frontend/frontend.php')?>
+<?php require('view/templates/frontend/frontend.php')?>

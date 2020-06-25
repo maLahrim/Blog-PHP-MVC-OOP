@@ -1,7 +1,7 @@
 
 <?php ob_start();?>
 <!--Presentation Section -->
-<div class="container-fluid homepage-firstSection">
+<section class="container-fluid homepage-firstSection">
     <div class="container">
         <div class="container homepage-inner-section-1 ">
         </div>
@@ -63,10 +63,10 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <!--END Presentation Section -->
 <!--Book Section -->
-<div id="chapitres" class="container-fluid homepage-secondSection px-0">
+<section id="chapitres" class="container-fluid homepage-secondSection px-0">
     <div class="container py-0">
         <div class="container text-center col-12 col-lg-6 py-5 seconSection-heading ">
             <h3 class="ss-secondary-heading mb-3 accent-color">MON LIVRE</h3>
@@ -77,7 +77,7 @@
         <div class="col-lg-3  p-0 pb-3 pt-lg-3 pb-lg-0 pr-lg-5">
             <img src="public/img/Billet-Simple-Pour-Alaska.png" alt="book">
         </div>
-        <div class="row m-0 p-0 col-lg-9 ">
+        <article class="row m-0 p-0 col-lg-9 ">
             <!---->
             <?php $posts->showAllPosts('front')?>
             <div class="col-lg-12 pt-5">
@@ -86,9 +86,9 @@
                 </p>
             </div>
             <!---->
-        </div>
+        </article>
     </div>
-</div>
-<?php require('views/templates/frontend/contact.php')?>
+</section>
+<?php require('view/templates/frontend/contact.php')?>
 <?php $content = ob_get_clean();?>
-<?php require('views/templates/frontend/frontend.php')?>
+<?php require('view/templates/frontend/frontend.php')?>

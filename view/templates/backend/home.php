@@ -25,4 +25,4 @@
     </div>
 </div>
 <?php $content = ob_get_clean();
-require('views/templates/backend/dashboard.php');?>
+require('view/templates/backend/dashboard.php');?>
