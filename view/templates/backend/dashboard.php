@@ -6,15 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?=pageTitle($title);?></title>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="/public/css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="/public/css/style.min.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.css" rel="stylesheet">
+    <link href="/public/css/mdb.css" rel="stylesheet">
     <link href="/public/css/style.css" rel="stylesheet">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/skxr8g05o3zkvvcbie8m6a68jitca2qn9sbf01y4zj41qb0i/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -79,31 +74,6 @@
             </div>
         </nav>
         <!-- Navbar -->
-
-        <!-- Sidebar -->
-        <div class="sidebar-fixed position-fixed">
-
-            <a class="logo-wrapper waves-effect">
-                <img src="https://mdbootstrap.com/img/logo/mdb-email.png" class="img-fluid" alt="">
-            </a>
-
-            <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item active waves-effect">
-                    <i class="fas fa-chart-pie mr-3"></i>Dashboard
-                </a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fas fa-user mr-3"></i>Profile</a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fas fa-table mr-3"></i>Tables</a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fas fa-map mr-3"></i>Maps</a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fas fa-money-bill-alt mr-3"></i>Orders</a>
-            </div>
-
-        </div>
-        <!-- Sidebar -->
-
     </header>
     <main class="pt-5 mx-lg-5">
         <div class="container-fluid mt-5">
@@ -117,27 +87,25 @@
                 </div>
             </div>
             <!-- Heading -->
-            <?=$content;?>
-            <?php
-
+            <?php 
+            echo $content;
             if(isset($postId)){
                 echo
                 '
                 <div>
                 <h2 class="h2 py-2 white-text blue-gradient color-block text-center" >Commentaires</h2>
                 <div>';
-                echo $post->showPostComments('back');
+                echo $post->showPostComments();
             }
             ?>
-
-
-
         </div>
     </main>
     <!--Main layout-->
 
     <!--Footer-->
-    <footer></footer>
+    <footer>
+        <?php require_once('view/templates/frontend/footer.php')?>
+    </footer>
     <!--/.Footer-->
     <!-- SCRIPTS -->
     <!-- JQuery -->

@@ -6,7 +6,7 @@
             <p class="text-center">Publié le <?=$post->_date?></p>
             <?=$post->_content?>
         <div>
-            <form class="border border-light p-3 p-lg-5" action="?id=<?=$postId?>&amp;action=addComment" method="post">
+            <form class="border border-light p-3 p-lg-5" action="?id=<?=$post->_id?>&amp;action=addComment" method="post">
                 <p class="h4 mb-4 text-left">Commentaire</p>        
                 <input class="form-control mb-4" id="defaultContactFormName" type="text" name="pseudo" placeholder="Nom">        
                 <textarea class="form-control rounded-0 mb-4" id="exampleFormControlTextarea2" name="comment" placeholder="Commentaire"></textarea>        
@@ -15,7 +15,7 @@
         </div>
         <?php 
         //PostClass.php
-        $post->showPostComments('front');
+        $post->showPostComments();
         ?> 
         </article>
     </div>

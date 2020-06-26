@@ -7,10 +7,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Connexion - Administration</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <link href="public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="public/css/mdb.min.css" rel="stylesheet">
-    <link href="public/css/style.min.css" rel="stylesheet">
-    <link href="public/css/style.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.css" rel="stylesheet">
+    <link href="/public/css/mdb.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
 </head>
 <!-- Default form login -->
 <body>

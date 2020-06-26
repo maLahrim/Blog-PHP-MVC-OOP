@@ -1,4 +1,5 @@
 <?php
+//=> Used in PostManager And CommentManager 
 class Manager{
     /*
     const HOST = 'localhost';
@@ -11,6 +12,7 @@ class Manager{
     const PASSWORD = '';
     const DBNAME = 'blog';
     
+    //connect to Database
     protected static function dbConnect(){
         try
         {
@@ -22,11 +24,11 @@ class Manager{
         }
         return $dataBase;
     }
+    // Get User Credentials
     public static function getUser()
     {
         $response  = self::dbConnect()->query('SELECT user , password   FROM users ');
         $user = $response->fetch();
-        
         return $user ;
     }
 }

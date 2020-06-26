@@ -7,7 +7,7 @@ function commentsTemplate($view,$comment){
         <h5 class="accent-color">'.htmlspecialchars($comment['pseudo']).'</h5>
         <p class="comment_date d-flex align-items-center ">
             <span class="mr-2">'.$comment['created_at'].'</span>
-            <a class="text-danger " href="?id='.$comment['article_id'].'&action=Chapitre&signaler='.$comment['id'].'">signaler</a>
+            <a class="text-danger " href="?action=chapitre&id='.$comment['article_id'].'&signaler='.$comment['id'].'">signaler</a>
         </p>
         <p class="comment_content m-0">'.htmlspecialchars($comment['content']).'</p>
     </div>';

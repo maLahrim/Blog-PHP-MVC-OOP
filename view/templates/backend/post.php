@@ -1,8 +1,8 @@
 
 <?php
-    if($view=='newpost'){
+    if($template=='newpost'){
         $content = '
-        <form class="border border-light p-5" action="?action=admin&amp;insertPost" method="post">
+        <form class="border border-light p-md-2 p-lg-5" action="?action=admin&insertPost" method="post">
             <h4 class="h4">Titre</h4>
             <input type="text" id="defaultContactFormName" class="post-edition form-control mb-4" placeholder="Titre" name="title"></input>
             <div class="form-group">
@@ -12,7 +12,7 @@
             <button class="btn btn-info btn-block" type="submit">Publier</button>
         </form>';
     
-}else{
+}elseif($template=='editpost'){
         $content = '
         <form class="border border-light p-1 p-lg-5" action="?action=admin&amp;chapitre='.$post->_id.'&amp;db=updatePost" method="post">
             <!-- Titre -->

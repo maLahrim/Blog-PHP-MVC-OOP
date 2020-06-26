@@ -10,7 +10,7 @@ class PostManager extends Manager{
     //request signle Post from DB
     public static function getSinglePost($postId)
     {
-        $response  = self::dbConnect()->query('SELECT title , created_at , content  FROM posts WHERE id='.$postId.' ');
+        $response  = self::dbConnect()->query('SELECT id , title , created_at , content  FROM posts WHERE id='.$postId.' ');
         $requestedPost = $response->fetch();
         return $requestedPost ;
     }
@@ -20,31 +20,26 @@ class PostManager extends Manager{
         $postsLenght = $request->fetch();
         return $postsLenght['total'];
     }
-    public static function allPostId($postId){
+    public static function allPostId(){
         $request = self::dbConnect()->query ('SELECT id FROM posts');
         $allPostId = $request->fetchAll();
         $request->closeCursor();
-        //var_dump($allPostId);
-        foreach($allPostId as $elt){
-            if(in_array($postId,$elt)){
-                return true;
-            }
-        }
+         return $allPostId;
     }
     // insert post
     public static function insertPost($title,$content){
         $request = self::dbConnect()->prepare('INSERT INTO posts (id,title,content,created_at) VALUES(?,?,?,CURRENT_TIMESTAMP)');
-        $newComment = $request->execute(array('',$title,$content));
+        $newComment = $request->execute(array('',$title,$content,));
         return $newComment;
     }
-    //Delet post
+    //Delete post
     public static function  deletePost($postId){
-        //relation parent enfant clef etrangére.
-        //$request=  self::dbConnect()->query ('DELETE a.* ,b.* FROM posts a JOIN comments b ON a.id = b.article_id WHERE a.id='.$postId.'');
-        $request=  self::dbConnect()->query ('DELETE FROM posts WHERE id='.$postId.''); // relation Table posts.id = comments.article_id Delet Cascad
+        //relation parent(posts.id)=>enfant(comments.article_id) clef etrangére.
+        $request=  self::dbConnect()->prepare ('DELETE FROM posts WHERE id:postId'); 
+        $request->execute(array('postId'=> $postId ));
         return $request;
     }
-    //update Post
+    //Update Post
     public static function updateOldPost($postId,$title,$content){
         $request = self::dbConnect()->prepare('UPDATE posts SET title = :newtitle, content = :newcontent WHERE id = :postid');
         $request->execute(array(

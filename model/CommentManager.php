@@ -14,12 +14,20 @@ class CommentManager extends Manager{
         $request ->closeCursor();
         return $commentsArray;
     }
-    //il faut filtrer les inputs
+    // request signle comments singlePostId from DB (filter signal comment)
+    public static function postCommentsId($postId){
+        $request = self::dbConnect()->query ('SELECT id FROM comments WHERE article_id='.$postId.'');
+        $postCommentsId = $request->fetchAll();
+        $request->closeCursor();
+        return $postCommentsId;
+    }
+    // Insert new comments    
     public static function insertComment($postId,$pseudo,$comment){
         $request = self::dbConnect()->prepare('INSERT INTO comments (id,article_id,pseudo,content ) VALUES(?,?,?,?)');
         $newComment = $request->execute(array('',$postId,$pseudo,$comment));
         return $newComment;
     }
+    // signale a comments
     public static function signalComment($commentId){
         $request = self::dbConnect()->prepare('UPDATE comments SET  Signalement = :signaled WHERE id = :commentId');
         $request->execute(array(
@@ -28,8 +36,10 @@ class CommentManager extends Manager{
             ));
         return $request;
     }
+    // delete a comments
     public static function  deleteComment($commentId){
-        $request=  self::dbConnect()->query ('DELETE FROM comments WHERE id='.$commentId.'');
+        $request=  self::dbConnect()->prepare ('DELETE FROM comments WHERE id:commentId');
+        $request->execute(array('commentId' => $commentId));
         return $request;
     }
 }
