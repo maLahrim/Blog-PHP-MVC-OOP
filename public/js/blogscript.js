@@ -16,4 +16,3 @@ if(document.getElementById('postEditor')){
     selector: '#postEditor',
   });
 }
-

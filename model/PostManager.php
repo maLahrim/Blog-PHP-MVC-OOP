@@ -35,7 +35,7 @@ class PostManager extends Manager{
     //Delete post
     public static function  deletePost($postId){
         //relation parent(posts.id)=>enfant(comments.article_id) clef etrangére.
-        $request=  self::dbConnect()->prepare ('DELETE FROM posts WHERE id:postId'); 
+        $request=  self::dbConnect()->prepare('DELETE FROM posts WHERE id = :postId'); 
         $request->execute(array('postId'=> $postId ));
         return $request;
     }

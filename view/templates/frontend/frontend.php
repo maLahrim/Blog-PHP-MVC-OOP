@@ -27,8 +27,6 @@
     <?php require('view/templates/frontend/footer.php')?>
     <!-- jQuery -->
     <script src="public/js/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script src="publicjs/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="public/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->

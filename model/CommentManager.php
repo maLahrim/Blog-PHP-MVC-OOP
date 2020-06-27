@@ -38,7 +38,7 @@ class CommentManager extends Manager{
     }
     // delete a comments
     public static function  deleteComment($commentId){
-        $request=  self::dbConnect()->prepare ('DELETE FROM comments WHERE id:commentId');
+        $request=  self::dbConnect()->prepare ('DELETE FROM comments WHERE id = :commentId');
         $request->execute(array('commentId' => $commentId));
         return $request;
     }

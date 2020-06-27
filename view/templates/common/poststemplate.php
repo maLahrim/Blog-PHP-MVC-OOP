@@ -4,7 +4,7 @@ function postsTemplate($view,$post){
     if($view=='front')
     {
         $frontPosts=
-        '<div class="col-lg-4 p-0 px-lg-3 pt-3">
+        '<div id="'.$post['id'].'" class="col-lg-4 p-0 px-lg-3 pt-3">
             <h3 class="accent-color">'.$post['title'].'</h3>
             <p>'.$post['content'].'</p>
             <p class="text-right">
@@ -16,7 +16,7 @@ function postsTemplate($view,$post){
     }elseif($view=='back')
     {
         $backPosts=
-        '<div class="d-flex flex-column back-card p-3 mb-3">
+        '<div id="'.$post['id'].'" class="d-flex flex-column back-card p-3 mb-3">
             <div class="d-flex justify-content-between ">
             <h6 class="blue-text" >'.$post['title'].'</h6>
             <p class="blue-text">'.$post['created_at'].'</p>

@@ -3,7 +3,7 @@
 function commentsTemplate($view,$comment){
     if($view=='front'){
         $frontComments = 
-    '<div class="border border-light p-3 p-lg-5 mt-3 comment-section">
+    '<div id="'.$comment['id'].'" class="border border-light p-3 p-lg-5 mt-3 comment-section">
         <h5 class="accent-color">'.htmlspecialchars($comment['pseudo']).'</h5>
         <p class="comment_date d-flex align-items-center ">
             <span class="mr-2">'.$comment['created_at'].'</span>
@@ -14,7 +14,7 @@ function commentsTemplate($view,$comment){
     return $frontComments;
     }elseif($view=='back'){
         $backComments =               
-        '   <div class="back-card p-2">
+        '   <div id="'.$comment['id'].'" class="back-card p-2">
                 <p class=" text-center h5">'.$comment['content'].'</p>
                 <p class="text-center d-flex justify-content-around align-items-center ">
                     <span>'.$comment['title'].'</span>
@@ -26,7 +26,7 @@ function commentsTemplate($view,$comment){
         return $backComments;    
     }elseif($view=='signaled'){
         $signaledComments=
-        '   <div class=" back-card p-2">
+        '   <div id="'.$comment['id'].'" class=" back-card p-2">
             <p class="text-center h5">'.$comment['content'].'</p>
                 <p class="text-center d-flex justify-content-around align-items-center ">
                     <span class="text-danger" >'.$comment['title'].'</span>

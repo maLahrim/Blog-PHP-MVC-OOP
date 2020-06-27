@@ -75,7 +75,7 @@
             filter_var(
                 $_POST[$key],
                 FILTER_VALIDATE_REGEXP,
-                array("options" => array("regexp"=>"#^[a-zA-Z0-9\",.!?@]*$#"))
+                array("options" => array("regexp"=>"#^[a-zA-Z0-9\",.!?@_ ]*$#"))
             );
         return $input;
     }

@@ -79,7 +79,7 @@
         <div class="container-fluid mt-5">
             <div class="card mb-4 wow fadeIn">
                 <div class="card-body">
-                    <h4 class="mb-2 mb-sm-0 pt-1">
+                    <h4 id="header"class="mb-2 mb-sm-0 pt-1">
                         <a href="/" target="_blank">Visiter l'accueil</a>
                         <span>/</span>
                         <span>www.JeanBlog.malahrim.fr</span>
@@ -110,8 +110,7 @@
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="public/js/jquery-3.4.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="public/js/popper.min.js"></script>
+
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
