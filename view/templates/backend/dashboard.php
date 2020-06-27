@@ -10,16 +10,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/public/img/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/public/img/icon/favicon-16x16.png">
     <link rel="manifest" href="/public/manifest/site.webmanifest">
-    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" >
+    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet">
     <link href="/public/css/bootstrap.css" rel="stylesheet">
     <link href="/public/css/mdb.css" rel="stylesheet">
     <link href="/public/css/style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/skxr8g05o3zkvvcbie8m6a68jitca2qn9sbf01y4zj41qb0i/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-</head>
-    
-
+    <script src="https://cdn.tiny.cloud/1/skxr8g05o3zkvvcbie8m6a68jitca2qn9sbf01y4zj41qb0i/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
 </head>
 
 <body class="grey lighten-3">
@@ -29,7 +27,7 @@
             <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand waves-effect" href="?view=admin"></a>
-                    <strong class="blue-text">Jean Forteroche</strong>
+                <strong class="blue-text">Jean Forteroche</strong>
                 </a>
                 <!-- Collapse -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -47,16 +45,14 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link waves-effect" href="?view=admin&newPost"
-                                >Nouveau Chapitre</a>
+                            <a class="nav-link waves-effect" href="?view=admin&newPost">Nouveau Chapitre</a>
                         </li>
                     </ul>
 
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons">
                         <li class="nav-item">
-                            <a href="https://www.facebook.com/" class="nav-link waves-effect"
-                                target="_blank">
+                            <a href="https://www.facebook.com/" class="nav-link waves-effect" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
@@ -83,7 +79,7 @@
         <div class="container-fluid mt-5">
             <div class="card mb-4 wow fadeIn">
                 <div class="card-body">
-                    <h4 id="header"class="mb-2 mb-sm-0 pt-1">
+                    <h4 id="header" class="mb-2 mb-sm-0 pt-1">
                         <a href="/" target="_blank">Visiter l'accueil</a>
                         <span>/</span>
                         <span>www.JeanBlog.malahrim.fr</span>
