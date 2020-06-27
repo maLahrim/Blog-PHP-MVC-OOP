@@ -1,9 +1,4 @@
 <?php
-    require_once('includes/functions.php'); // menu + page title + filter functions
-    require_once('view/templates/common/commentstemplate.php'); //Back end + front end comments template functions
-    require_once('view/templates/common/poststemplate.php'); //Back end + front end posts template function
-    require_once('controller/frontend.php'); 
-    require_once('controller/backend.php');
     // Auto Load class
     function classloader($class)
     {
@@ -18,3 +13,8 @@
         }
     }
     spl_autoload_register('classloader');
+    require_once('includes/functions.php'); // menu + page title + filter functions
+    require_once('view/templates/common/commentstemplate.php'); //Back end + front end comments template functions
+    require_once('view/templates/common/poststemplate.php'); //Back end + front end posts template function
+    require_once('controller/frontend.php'); 
+    require_once('controller/backend.php');

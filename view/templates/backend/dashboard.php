@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?=pageTitle($title);?></title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/img//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/img/icon/favicon-16x16.png">
+    <link rel="manifest" href="/public/manifest/site.webmanifest">
+    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" >
     <link href="/public/css/bootstrap.css" rel="stylesheet">
     <link href="/public/css/mdb.css" rel="stylesheet">
     <link href="/public/css/style.css" rel="stylesheet">
@@ -24,7 +28,7 @@
         <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
             <div class="container-fluid">
                 <!-- Logo -->
-                <a class="navbar-brand waves-effect" href="?action=admin"></a>
+                <a class="navbar-brand waves-effect" href="?view=admin"></a>
                     <strong class="blue-text">Jean Forteroche</strong>
                 </a>
                 <!-- Collapse -->
@@ -38,12 +42,12 @@
                     <!-- Left -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link waves-effect" href="?action=admin">Administration
+                            <a class="nav-link waves-effect" href="?view=admin">Administration
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link waves-effect" href="?action=admin&newPost"
+                            <a class="nav-link waves-effect" href="?view=admin&newPost"
                                 >Nouveau Chapitre</a>
                         </li>
                     </ul>
@@ -62,7 +66,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="?action=logout"
+                            <a href="?view=admin&action=logout"
                                 class="nav-link border border-light rounded waves-effect">
                                 <i class="fab fa-sign-out mr-2"></i>Déconnexion
                             </a>

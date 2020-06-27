@@ -8,7 +8,7 @@ function postsTemplate($view,$post){
             <h3 class="accent-color">'.$post['title'].'</h3>
             <p>'.$post['content'].'</p>
             <p class="text-right">
-                <a class="text-right" href="/?action=chapitre&amp;id='.$post['id'].'">lire plus</a>
+                <a class="text-right" href="/?view=front&action=chapitre&amp;id='.$post['id'].'">lire plus</a>
             </p>
         </div>';
         return $frontPosts;
@@ -25,8 +25,8 @@ function postsTemplate($view,$post){
             '.$post['content'].'
             </div>
             <div class="d-flex justify-content-between">
-                <a href="/?action=admin&chapitre='.$post['id'].'" class="btn btn-warning p-1 ">Modifier</a>
-                <a href="/?action=admin&deletePost='.$post['id'].'" type="button" class="btn btn-danger p-1 ">Supprimer</a>
+                <a href="/?view=admin&chapitre='.$post['id'].'" class="btn btn-warning p-1 ">Modifier</a>
+                <a href="/?view=admin&deletePost='.$post['id'].'" type="button" class="btn btn-danger p-1 ">Supprimer</a>
             </div>
         </div>';
         return $backPosts;        

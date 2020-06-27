@@ -34,7 +34,7 @@
         }
         return
         nav_item('ACCUEIL','/','nav-item','nav-link').
-        nav_item('CHAPITRES','/?action=posts','nav-item','nav-link').
+        nav_item('CHAPITRES','/?view=front&action=posts','nav-item','nav-link').
         $logo.
         nav_item('A PROPOS','/#about-us','nav-item','nav-link').
         nav_item('CONTACT','/#contact','nav-item','nav-link');

@@ -82,7 +82,7 @@
             <?php $posts->showAllPosts()?>
             <div class="col-lg-12 pt-5">
                 <p class="text-center m-0">
-                    <a class="btn" href="?action=posts">Voir plus</a>
+                    <a class="btn" href="?view=front&action=posts">Voir plus</a>
                 </p>
             </div>
             <!---->

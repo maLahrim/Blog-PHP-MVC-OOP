@@ -7,7 +7,7 @@ function commentsTemplate($view,$comment){
         <h5 class="accent-color">'.htmlspecialchars($comment['pseudo']).'</h5>
         <p class="comment_date d-flex align-items-center ">
             <span class="mr-2">'.$comment['created_at'].'</span>
-            <a class="text-danger " href="?action=chapitre&id='.$comment['article_id'].'&signaler='.$comment['id'].'">signaler</a>
+            <a class="text-danger " href="?view=front&action=chapitre&id='.$comment['article_id'].'&signaler='.$comment['id'].'">signaler</a>
         </p>
         <p class="comment_content m-0">'.htmlspecialchars($comment['content']).'</p>
     </div>';
@@ -20,7 +20,7 @@ function commentsTemplate($view,$comment){
                     <span>'.$comment['title'].'</span>
                     <span>Par: '.$comment['pseudo'].'</span>
                     <span>'.$comment['created_at'].'</span>
-                    <a href="/?action=admin&deleteComment='.$comment['id'].'" type="button" class="btn btn-danger p-1 ">Supprimer</a>
+                    <a href="/?view=admin&deleteComment='.$comment['id'].'" type="button" class="btn btn-danger p-1 ">Supprimer</a>
                 </p>
             </div>';   
         return $backComments;    
@@ -32,7 +32,7 @@ function commentsTemplate($view,$comment){
                     <span class="text-danger" >'.$comment['title'].'</span>
                     <span class="text-danger" >Par: '.$comment['pseudo'].'</span>
                     <span class="text-danger" >'.$comment['created_at'].'</span>
-                    <a href="/?action=admin&deleteComment='.$comment['id'].'" type="button" class="btn btn-danger p-1 ">Supprimer</a>
+                    <a href="/?view=admin&deleteComment='.$comment['id'].'" type="button" class="btn btn-danger p-1 ">Supprimer</a>
                 </p>
             </div>';
         return $signaledComments;  

@@ -2,7 +2,7 @@
 <?php
     if($template=='newpost'){
         $content = '
-        <form class="border border-light p-md-2 p-lg-5" action="?action=admin&insertPost" method="post">
+        <form class="border border-light p-md-2 p-lg-5" action="?view=admin&insertPost" method="post">
             <h4 class="h4">Titre</h4>
             <input type="text" id="defaultContactFormName" class="post-edition form-control mb-4" placeholder="Titre" name="title"></input>
             <div class="form-group">
@@ -14,7 +14,7 @@
     
 }elseif($template=='editpost'){
         $content = '
-        <form class="border border-light p-1 p-lg-5" action="?action=admin&amp;chapitre='.$post->_id.'&amp;db=updatePost" method="post">
+        <form class="border border-light p-1 p-lg-5" action="?view=admin&amp;chapitre='.$post->_id.'&amp;db=updatePost" method="post">
             <!-- Titre -->
             <h4 class="h4">Titre</h4>
             <input type="text" id="defaultContactFormName" class="post-edition form-control mb-4" placeholder="Titre" name="title" value="'.$post->_title.'"></input>

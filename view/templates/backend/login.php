@@ -13,7 +13,7 @@
 </head>
 <!-- Default form login -->
 <body>
-<form class="text-center border border-light p-5 col-md-6 col-lg-3 mt-md-5 m-auto" action="?action=admin" method="post">
+<form class="text-center border border-light p-5 col-md-6 col-lg-3 mt-md-5 m-auto" action="?view=admin" method="post">
     <p class="h4 mb-4">Connexion</p>
     <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" name='email' placeholder="E-mail">
     <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" name="password" placeholder="mots de passe">

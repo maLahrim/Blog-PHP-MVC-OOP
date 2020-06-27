@@ -10,7 +10,6 @@
         - Show signle post + comments
         - INSERT UPDATE DELETE single Post 
         - DELET comment
-
 */
 class SinglePost {
     public $_post;
@@ -46,7 +45,7 @@ class SinglePost {
             die('Impossible d\'ajouter le chapitre !');
         }
         else {
-            alert('Votre chapitre a bien été publié','/?action=admin');
+            alert('Votre chapitre a bien été publié','/?view=admin');
         }
     }
     
@@ -59,7 +58,7 @@ class SinglePost {
         }
         else 
         {
-            alert('Votre chapitre a bien été mis à jour','/?action=admin&chapitre='.$postId.'');
+            alert('Votre chapitre a bien été mis à jour','/?view=admin&chapitre='.$postId.'');
         }
     }
 
@@ -72,7 +71,7 @@ class SinglePost {
         }
         else 
         {
-            alert('Votre chapitre a bien été supprimé','/?action=admin');
+            alert('Votre chapitre a bien été supprimé','/?view=admin');
         }
     }
 
@@ -83,7 +82,7 @@ class SinglePost {
             die('Impossible d\'ajouter le commentaire !');
         }
         else {
-            alert('Votre commentaire a bien été envoyé ','/?action=chapitre&id='.$postId.'');
+            alert('Votre commentaire a bien été envoyé ','/?view=front&action=chapitre&id='.$postId.'');
         }
     }
     public function updateComment($postId,$commentId)
@@ -95,7 +94,7 @@ class SinglePost {
         }
         else 
         {
-            alert('Merci d\'avoir signalé ce commentaire','/?action=chapitre&id='.$postId.'');
+            alert('Merci d\'avoir signalé ce commentaire','/?view=front&action=chapitre&id='.$postId.'');
         }
     }
 
@@ -108,7 +107,7 @@ class SinglePost {
         }
         else 
         {
-            alert('Commentaire supprimé','/?action=admin');
+            alert('Commentaire supprimé','/?view=admin');
         }
     }
 }
