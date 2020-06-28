@@ -1,4 +1,5 @@
 <?php
+namespace Model;
 //=> Used in PostManager And CommentManager 
 class Manager{
     /*
@@ -6,12 +7,12 @@ class Manager{
     const USER= 'autolimo_blog';
     const PASSWORD = '@Ayman010162';
     const DBNAME = 'autolimo_blog';
-    */
+*/
     const HOST = 'localhost:3308';
     const USER= 'root';
     const PASSWORD = '';
     const DBNAME = 'blog';
-    
+
     //connect to Database
     protected static function dbConnect(){
         try
@@ -27,7 +28,7 @@ class Manager{
     // Get User Credentials
     public static function getUser()
     {
-        $response  = self::dbConnect()->query('SELECT user , password   FROM users ');
+        $response  = self::dbConnect()->query('SELECT user , password FROM users ');
         $user = $response->fetch();
         return $user ;
     }

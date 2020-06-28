@@ -1,8 +1,8 @@
 <?php ob_start();?>
 <section class="container special-color-dark pt-6">
-    <div class=" m-auto  p-lg-5">
+<h1 class="text-center accent-color mt-5"><?=$post->_title?></h1>
+    <div class=" m-auto  p-lg-5 pt-lg-2">
         <article class='postview'>
-            <h1 class="text-center accent-color "><?=$post->_title?></h1>
             <p class="text-center">Publié le <?=$post->_date?></p>
             <?=$post->_content?>
         <div>

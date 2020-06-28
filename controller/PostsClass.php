@@ -1,5 +1,8 @@
 <?php
 // Request all blog posts + all blog comments + all signaled comments
+namespace Controller;
+use Model\CommentManager;
+use Model\PostManager;
 class PostsClass {
     public $_postsArray;
     public $_commentsArray;

@@ -10,7 +10,10 @@
         - Show signle post + comments
         - INSERT UPDATE DELETE single Post 
         - DELET comment
-*/
+*/ 
+namespace Controller;
+use Model\CommentManager;
+use Model\PostManager;
 class SinglePost {
     public $_post;
     public $_title;

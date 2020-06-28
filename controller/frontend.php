@@ -1,7 +1,8 @@
 <?php
 //frontEnd Controllers
-
     //Show index view (SELECT posts from DB)
+use Controller\PostsClass;
+use Controller\SinglePost;
     function renderIndex()
     {
         $title="Accueil";

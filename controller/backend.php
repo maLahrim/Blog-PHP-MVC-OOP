@@ -1,6 +1,8 @@
 <?php
 //Backend Controllers
     //show Admin (Read posts and comments)
+    use Controller\PostsClass;
+    use Controller\SinglePost;
     function renderAdmin()
     {
         $title = 'Administration';

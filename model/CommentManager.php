@@ -1,4 +1,5 @@
 <?php
+namespace Model;
 class CommentManager extends Manager{
     // request all blog comments from DB
     public static function getAllComments(){

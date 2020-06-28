@@ -1,7 +1,33 @@
+<?php
+require_once('includes/autoloader.php');
+spl_autoload_register('myAutoLoader');
 
-<?php 
-
-require_once('controller/autoloader.php');
+if (!isset($_GET['view'])) 
+{  
+    renderIndex();
+}
+else
+{
+    if($_GET['view'] =='front' AND isset($_GET['action']))
+    {
+        frontEndSwitch();
+    }
+    elseif($_GET['view'] =='admin')
+    {       
+        if(loginCheck())
+        {
+            backEndSwitch();
+        }
+        else
+        {   
+            require('view/templates/backend/login.php');
+        }
+    }
+    else
+    {
+        notFound();  
+    }
+}
 function frontEndSwitch(){
     switch (true) 
     {
@@ -24,7 +50,8 @@ function frontEndSwitch(){
                     { //if comments belongs to the same post => includes/functions.php
                         signal($postId,$commentId);
                     }
-                    else{
+                    else
+                    {
                         alert('impossible de signaler ce commentaire','/?view=front&action=chapitre&id='.$postId.'');
                     }
                 }
@@ -61,87 +88,78 @@ function frontEndSwitch(){
             renderIndex();
         break;
     }
-}
+};
 function backEndSwitch(){
-    $user = Manager::getUser();
+    switch(true)
+    {
+        case isset($_GET['chapitre']) AND !isset($_GET['db']) :
+            $postId= filter_input ( INPUT_GET,'chapitre',FILTER_VALIDATE_INT);
+            editPost($postId);
+            break;
+
+        case isset($_GET['db']) :
+            $postId= filter_input ( INPUT_GET,'chapitre',FILTER_VALIDATE_INT);
+            $newTitle = $_POST['title'];
+            $newContent=$_POST['content'];
+            updatePost($postId,$newTitle,$newContent);
+            break;
+
+        case isset($_GET['newPost']):
+            newPost();
+            break;
+
+        case isset($_GET['insertPost']):
+            $postTitle = $_POST['title'];
+            $postContent=$_POST['content'];
+            creatPost($postTitle,$postContent); 
+            break;
+
+        case isset($_GET['deletePost']) :
+            deletePost($_GET['deletePost']);
+            break;
+
+        case isset($_GET['deleteComment']):
+            $commentId= filter_input ( INPUT_GET,'deleteComment',FILTER_VALIDATE_INT);
+            deleteComment($commentId);
+            break;
+
+        case isset($_GET['action']) AND $_GET['action'] == 'logout' :
+            session_start();
+            $_SESSION = array();
+            header('Location: /?view=admin');
+            break;
+
+        default:
+            renderAdmin();
+            break;
+    }
+};
+function loginCheck(){
+
+    $user = Model\Manager::getUser();
     session_start();
+    if(isset($_POST['email']) AND isset($_POST['password']))
+    {
+        $postUser = htmlspecialchars($_POST['email']);
+        $postPassword = htmlspecialchars($_POST['password']);
+        $hashCheck = password_verify($postPassword,$user['password']);
 
-    if(!empty($_POST['email']) AND !empty($_POST['password']))
-    {
-    $_SESSION['email']= $_POST['email'];
-    $_SESSION['password']= $_POST['password'];
-    }
-    
-    if(!empty($_SESSION['email']) AND !empty($_SESSION['password'])
-        AND $_SESSION['email']==$user['user'] 
-        AND password_verify($_SESSION["password"],$user['password']))
-    {
-        switch(true)
+        if($postUser == $user['user'] AND $hashCheck)
         {
-            case isset($_GET['chapitre']) AND !isset($_GET['db']) :
-                $postId= filter_input ( INPUT_GET,'chapitre',FILTER_VALIDATE_INT);
-                editPost($postId);
-                break;
-    
-            case isset($_GET['db']) :
-                $postId= filter_input ( INPUT_GET,'chapitre',FILTER_VALIDATE_INT);
-                $newTitle = $_POST['title'];
-                $newContent=$_POST['content'];
-                updatePost($postId,$newTitle,$newContent);
-                break;
-    
-            case isset($_GET['newPost']):
-                newPost();
-                break;
-    
-            case isset($_GET['insertPost']):
-                $postTitle = $_POST['title'];
-                $postContent=$_POST['content'];
-                creatPost($postTitle,$postContent); 
-                break;
-    
-            case isset($_GET['deletePost']) :
-                deletePost($_GET['deletePost']);
-                break;
-    
-            case isset($_GET['deleteComment']):
-                $commentId= filter_input ( INPUT_GET,'deleteComment',FILTER_VALIDATE_INT);
-                deleteComment($commentId);
-                break;
-    
-            case isset($_GET['action']) AND $_GET['action'] == 'logout' :
-                session_start();
-                $_SESSION = array();
-                header('Location: ?view=admin');
-                break;
-    
-            default:
-                renderAdmin();
-                break;
+            $_SESSION['email']= $postUser;
+            $_SESSION['password']= $_POST['password'];
+            return true;
         }
+        else
+        {
+            alert('Identifiant incorrect','/?view=admin');
+            return false;
+        };
     }
-    else
+    elseif(isset($_SESSION['email']) AND isset($_SESSION['password']) AND $_SESSION['email'] == $user['user'] 
+    AND password_verify($_SESSION['password'],$user['password']))
     {
-        require('view/templates/backend/login.php');
+        return true;
     }
-}
-if (!isset($_GET['view'])) 
-{  
-    renderIndex();
-}
-else
-{
-    if($_GET['view'] =='front' AND isset($_GET['action']))
-    {
-        frontEndSwitch();
-    }
-
-    elseif($_GET['view'] =='admin')
-    {
-        backEndSwitch();
-    }
-    else
-    {
-        notFound();  
-    }
-}
+    
+};

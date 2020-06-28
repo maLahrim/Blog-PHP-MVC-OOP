@@ -1,4 +1,5 @@
 <?php
+namespace Model;
 class PostManager extends Manager{
     // fetch all blog posts from DB
     public static function getAllPosts(){
@@ -24,7 +25,7 @@ class PostManager extends Manager{
         $request = self::dbConnect()->query ('SELECT id FROM posts');
         $allPostId = $request->fetchAll();
         $request->closeCursor();
-         return $allPostId;
+        return $allPostId;
     }
     // insert post
     public static function insertPost($title,$content){

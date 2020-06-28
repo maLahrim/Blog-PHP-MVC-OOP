@@ -22,7 +22,7 @@
 <body onscroll="menuStyle()">
 
     <?php require('view/templates/frontend/header.php')?>
-    <main class="container_fluid special-color-dark p-0">
+    <main class="container_fluid special-color-dark pb-5 p-0">
         <!-- Dynamic content -->
         <?= $content?>
     </main>

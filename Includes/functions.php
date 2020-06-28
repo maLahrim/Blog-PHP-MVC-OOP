@@ -1,5 +1,7 @@
 <?php
     // Header functions
+    use Model\CommentManager;
+    use Model\PostManager;
     function pageTitle($title)
     {
         if (isset($title))
@@ -50,7 +52,7 @@
     //filter functions
     function ispost($postId)
     {
-        $allPostId= PostManager::allPostId();
+        $allPostId = PostManager::allPostId();
         foreach($allPostId as $elt)
         {
             if(in_array($postId,$elt))
@@ -61,7 +63,7 @@
     }
     function commentsFilter($postId,$commentId)
     {
-        $postCommentsId= CommentManager::postCommentsId($postId);
+        $postCommentsId = CommentManager::postCommentsId($postId);
         foreach($postCommentsId as $elt)
         {
             if(in_array($commentId,$elt))
