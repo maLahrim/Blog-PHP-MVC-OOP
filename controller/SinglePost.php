@@ -1,6 +1,6 @@
 <?php
 /*
-//Single Post controller 
+//Single Post controller
 // Request signle posts based on id + all this post comments
     // front End :
         - Show signle post + comments
@@ -8,13 +8,16 @@
         - visitor => Creat Comment
     //Back End :
         - Show signle post + comments
-        - INSERT UPDATE DELETE single Post 
+        - INSERT UPDATE DELETE single Post
         - DELET comment
-*/ 
+*/
 namespace Controller;
+
 use Model\CommentManager;
 use Model\PostManager;
-class SinglePost {
+
+class SinglePost
+{
     public $_post;
     public $_title;
     public $_id;
@@ -23,7 +26,7 @@ class SinglePost {
     public $_commentsArray;
     public $_view;
 
-    public function showSinglePost($postId,$view)
+    public function showSinglePost($postId, $view)
     {
         $this->_post = PostManager::getSinglePost($postId);
         $this->_id = $this->_post['id'];
@@ -35,82 +38,67 @@ class SinglePost {
     }
     public function showPostComments()
     {
-        foreach($this->_commentsArray as $comment)
-        {
-            echo commentsTemplate($this->_view,$comment);
+        foreach ($this->_commentsArray as $comment) {
+            echo commentsTemplate($this->_view, $comment);
         }
     }
-    function insertNewPost($title,$content)
+    public function insertNewPost($title, $content)
     {
-        $insertPost = PostManager::insertPost($title,$content);
+        $insertPost = PostManager::insertPost($title, $content);
 
         if ($insertPost === false) {
             die('Impossible d\'ajouter le chapitre !');
-        }
-        else {
-            alert('Votre chapitre a bien été publié','/?view=admin');
+        } else {
+            alert('Votre chapitre a bien été publié', '/?view=admin');
         }
     }
     
-    public function updateThisPost($postId,$title,$content)
+    public function updateThisPost($postId, $title, $content)
     {
-        $updatePost = PostManager::updateOldPost($postId,$title,$content);
-        if ($updatePost === false) 
-        {
+        $updatePost = PostManager::updateOldPost($postId, $title, $content);
+        if ($updatePost === false) {
             die('Impossible de mettre à jour !');
-        }
-        else 
-        {
-            alert('Votre chapitre a bien été mis à jour','/?view=admin&chapitre='.$postId.'');
+        } else {
+            alert('Votre chapitre a bien été mis à jour', '/?view=admin&chapitre='.$postId.'');
         }
     }
 
-    function deleteThisPost($postId)
+    public function deleteThisPost($postId)
     {
         $deletPost = PostManager::deletePost($postId);
-        if ($deletPost === false) 
-        {
+        if ($deletPost === false) {
             die('Impossible de supprimer ce chapitre !');
-        }
-        else 
-        {
-            alert('Votre chapitre a bien été supprimé','/?view=admin');
+        } else {
+            alert('Votre chapitre a bien été supprimé', '/?view=admin');
         }
     }
 
-    public function creatComment($postId,$pseudo,$comment)
+    public function creatComment($postId, $pseudo, $comment)
     {
-        $addComment = CommentManager::insertComment($postId,$pseudo,$comment);
+        $addComment = CommentManager::insertComment($postId, $pseudo, $comment);
         if ($addComment === false) {
             die('Impossible d\'ajouter le commentaire !');
-        }
-        else {
-            alert('Votre commentaire a bien été envoyé ','/?view=front&action=chapitre&id='.$postId.'');
+        } else {
+            alert('Votre commentaire a bien été envoyé ', '/?view=front&action=chapitre&id='.$postId.'');
         }
     }
-    public function updateComment($postId,$commentId)
+    public function updateComment($postId, $commentId)
     {
         $updatePost = CommentManager::signalComment($commentId);
-        if ($updatePost === false) 
-        {
+        if ($updatePost === false) {
             die('Impossible de signaler!');
-        }
-        else 
-        {
-            alert('Merci d\'avoir signalé ce commentaire','/?view=front&action=chapitre&id='.$postId.'');
+        } else {
+            alert('Merci d\'avoir signalé ce commentaire', '/?view=front&action=chapitre&id='.$postId.'');
         }
     }
 
-    function deleteThisComment($commentId)
+    public function deleteThisComment($commentId)
     {
         $deletPost = CommentManager::deleteComment($commentId);
-        if ($deletPost === false) 
-        {
+        if ($deletPost === false) {
             die('Impossible d\'ajouter le chapitre !');
-        }
-        else 
-        {
-            alert('Commentaire supprimé','/?view=admin');
+        } else {
+            alert('Commentaire supprimé', '/?view=admin');
         }
     }
 }

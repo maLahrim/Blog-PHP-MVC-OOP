@@ -3,7 +3,7 @@
     <img class=" m-auto mt-3 p-md-5 w-50  " src="public/img/Billet-Simple-Pour-Alaska.png" alt="billet_simple_pour_alaska" >
         <div class=" m-auto  p-lg-5">
             <div class="row col-12 m-auto align-items-start">     
-            <?php $posts->showAllPosts()?>
+                <?php $posts->showAllPosts()?>
             </div>
         </div>
     </article>

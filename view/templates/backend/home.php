@@ -7,7 +7,7 @@
             <!--Card content-->
             <div class="card-body p-0">
             <h2  class="h2 py-2 white-text blue-gradient color-block text-center">CHAPITRES</h2>
-                <?php $posts->showAllPosts()?>
+            <?php $posts->showAllPosts()?>
             </div>
         </div>
         <!--/.Card-->
@@ -18,8 +18,8 @@
             <div class="card-body p-0">
             <h2 class="h2 py-2 white-text young-passion-gradient color-block text-center" >Signalement</h2>
             <?php $posts->showSignaledComments() ?>
-                <h2 class="h2 py-2 white-text blue-gradient color-block text-center" >Commentaires</h2>
-                    <?php $posts->showAllComments()?>
+            <h2 class="h2 py-2 white-text blue-gradient color-block text-center" >Commentaires</h2>
+            <?php $posts->showAllComments()?>
             </div>
         </div>
     </div>

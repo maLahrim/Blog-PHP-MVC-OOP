@@ -8,7 +8,7 @@
         <div class="row">
             <!--Grid column-->
             <div class="col-md-12 mb-md-0 mb-5">
-                <form id="contact-form" name="contact-form" action="mail.php"   method="POST">
+                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
                     <!--Grid row-->
                     <div class="row">
                         <!--Grid column-->
@@ -41,7 +41,8 @@
                         <!--Grid column-->
                         <div class="col-md-12">
                             <div class="md-form">
-                                <textarea id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                <textarea id="message" name="message" rows="2"
+                                    class="form-control md-textarea"></textarea>
                                 <label for="message">Message</label>
                             </div>
                         </div>
@@ -49,7 +50,9 @@
                     <!--Grid row-->
                 </form>
                 <div class="text-center">
-                    <a class="btn contact-btn-color" onclick="document.getElementById('contact-form').submit();">Envoyer</a>
+                    <a class="btn contact-btn-color"
+                        onclick="document.getElementById('contact-form').submit();">Envoyer
+                    </a>
                 </div>
                 <div class="status"></div>
             </div>

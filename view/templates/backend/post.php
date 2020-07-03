@@ -1,6 +1,6 @@
 
 <?php
-    if($template=='newpost'){
+    if ($template=='newpost') {
         $content = '
         <form class="border border-light p-md-2 p-lg-5" action="?view=admin&insertPost" method="post">
             <h4 class="h4">Titre</h4>
@@ -11,8 +11,7 @@
             </div>
             <button class="btn btn-info btn-block" type="submit">Publier</button>
         </form>';
-    
-}elseif($template=='editpost'){
+    } elseif ($template=='editpost') {
         $content = '
         <form class="border border-light p-1 p-lg-5" action="?view=admin&amp;chapitre='.$post->_id.'&amp;db=updatePost" method="post">
             <!-- Titre -->
@@ -28,5 +27,5 @@
             <button class="btn btn-info btn-block" type="submit">Publier</button>
         </form>'
         ;
-}
+    }
 require('view/templates/backend/dashboard.php');

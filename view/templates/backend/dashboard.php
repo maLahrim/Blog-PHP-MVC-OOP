@@ -87,14 +87,13 @@
                 </div>
             </div>
             <!-- Heading -->
-            <?php 
+            <?php
             echo $content;
-            if(isset($postId)){
+            if (isset($postId)) {
                 echo
-                '
-                <div>
-                <h2 class="h2 py-2 white-text blue-gradient color-block text-center" >Commentaires</h2>
-                <div>';
+                    '<div>
+                    <h2 class="h2 py-2 white-text blue-gradient color-block text-center" >Commentaires</h2>
+                    <div>';
                 echo $post->showPostComments();
             }
             ?>
