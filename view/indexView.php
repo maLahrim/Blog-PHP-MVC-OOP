@@ -6,22 +6,22 @@
         <div class="container homepage-inner-section-1 ">
         </div>
         <div class="row homepage-inner-section-2 ">
-            <h1 class= "homepage-main-title ml-5 ml-md-0" >Jean Forteroche</h1>
+            <h1 class= "homepage-main-title ml-5 h1 ml-md-0" >Jean Forteroche</h1>
             <p>ACTEUR & ÉCRIVAIN</p>
         </div>
         <div class="row justify-content-center align-items-center w-responsive pt-3 m-auto homepage-inner-section-3 ">
             <!--<div class="row justify-content-between homepage-inner-section-3 w-responsive pt-5">-->
             <a class="px-2" title="" target="_blank" href="#"> 
-                <img src="public/img/partner/partner-01.png" alt=""> 
+                <img src="public/img/partner/partner-01.png" alt="partner-01"> 
             </a>
             <a class="px-2" title="" target="_blank" href="#"> 
-                <img src="public/img/partner/partner-02.png" alt=""> 
+                <img src="public/img/partner/partner-02.png" alt="partner-02"> 
             </a>
             <a class="px-2" title="" target="_blank" href="#"> 
-                <img src="public/img/partner/partner-03.png" alt=""> 
+                <img src="public/img/partner/partner-03.png" alt="partner-03"> 
             </a>
             <a class="px-2" title="" target="_blank" href="#"> 
-                <img src="public/img/partner/partner-04.png" alt=""> 
+                <img src="public/img/partner/partner-04.png" alt="partner-04"> 
             </a>
         </div>
         <div class="container p-lg-5 text-left">
@@ -37,8 +37,8 @@
                 <div class="col-12 col-lg-4 ">
                     <div class="card">
                         <div class="card-body py-0">
-                            <h4 class="accent-color"> QUI SUIS-JE ?</h4>
-                            <h1 class="my-5">Jean Forteroche</h1>
+                            <h2 class="accent-color h4"> QUI SUIS-JE ?</h2>
+                            <h2 class="my-5 h1">Jean Forteroche</h2>
                             <p class="secondary-text-color mb-0">
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ipsam cupiditate laudantium adipisci minima, velit sapiente, provident delectus odio soluta quod error labore nam odit. Cum aut et neque ea.
                             </p>
@@ -70,7 +70,7 @@
     <div class="container py-0">
         <div class="container text-center col-12 col-lg-6 py-5 seconSection-heading ">
             <h3 class="ss-secondary-heading mb-3 accent-color">MON LIVRE</h3>
-            <h1 class="ss-main-heading mt-3">Billet simple pour l'Alaska </h1>
+            <h2 class=" h1 ss-main-heading mt-3">Billet simple pour l'Alaska </h2>
         </div>
     </div>
     <div class="row col-12 m-auto article-text-color align-items-start">
