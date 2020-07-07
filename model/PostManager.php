@@ -1,6 +1,5 @@
 <?php
 namespace Model;
-
 class PostManager extends Manager
 {
     // fetch all blog posts from DB

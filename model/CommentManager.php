@@ -1,6 +1,5 @@
 <?php
 namespace Model;
-
 class CommentManager extends Manager
 {
     // request all blog comments from DB

@@ -1,15 +1,8 @@
 <?php
 namespace Model;
-
 //=> Used in PostManager And CommentManager
 class Manager
 {
-    /*
-    const HOST = 'localhost';
-    const USER= 'autolimo_blog';
-    const PASSWORD = '@Ayman010162';
-    const DBNAME = 'autolimo_blog';
-*/
     const HOST = 'localhost:3308';
     const USER= 'root';
     const PASSWORD = '';
