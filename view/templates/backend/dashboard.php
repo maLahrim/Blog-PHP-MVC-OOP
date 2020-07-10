@@ -25,19 +25,15 @@
         <!-- Navbar -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
             <div class="container-fluid">
-                <!-- Logo -->
                 <a class="navbar-brand waves-effect" href="?view=admin"></a>
                 <strong class="blue-text">Jean Forteroche</strong>
                 </a>
-                <!-- Collapse -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- Links -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link waves-effect" href="?view=admin">Administration
@@ -48,8 +44,6 @@
                             <a class="nav-link waves-effect" href="?view=admin&newPost">Nouveau Chapitre</a>
                         </li>
                     </ul>
-
-                    <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons">
                         <li class="nav-item">
                             <a href="https://www.facebook.com/" class="nav-link waves-effect" target="_blank">
@@ -68,9 +62,7 @@
                             </a>
                         </li>
                     </ul>
-
                 </div>
-
             </div>
         </nav>
         <!-- Navbar -->
@@ -100,16 +92,13 @@
         </div>
     </main>
     <!--Main layout-->
-
     <!--Footer-->
     <footer>
         <?php require_once('view/templates/frontend/footer.php')?>
     </footer>
-    <!--/.Footer-->
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="public/js/jquery-3.4.1.min.js"></script>
-
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->

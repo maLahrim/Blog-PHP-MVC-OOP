@@ -1,5 +1,6 @@
 <?php
 // Request all blog posts + all blog comments + all signaled comments
+// Parent Front end controler in controller/frontend.php 
 namespace Controller;
 
 use Model\CommentManager;

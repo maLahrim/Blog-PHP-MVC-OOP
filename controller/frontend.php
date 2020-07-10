@@ -1,5 +1,6 @@
 <?php
 //frontEnd Controllers
+// USE CHILD CONTROLLERS TO SELECT PostsClass.php OR  SinglePost.php
     //Show index view (SELECT posts from DB)
 use Controller\PostsClass;
 use Controller\SinglePost;

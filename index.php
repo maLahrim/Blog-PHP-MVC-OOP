@@ -1,18 +1,19 @@
 <?php
+// Auto Load
 require_once('includes/autoloader.php');
 spl_autoload_register('myAutoLoader');
-
-if (!isset($_GET['view'])) 
+// select the view
+if (!isset($_GET['view']))                                        // now view render index (default router )
 {  
     renderIndex();
 }
 else
 {
-    if($_GET['view'] =='front' AND isset($_GET['action']))
+    if($_GET['view'] =='front' AND isset($_GET['action']))   // if view  is front init the front switch function line 32 index.php
     {
         frontEndSwitch();
     }
-    elseif($_GET['view'] =='admin')
+    elseif($_GET['view'] =='admin')                         // if view  is front init the back switch function line 93 index.php
     {       
         if(loginCheck())
         {
@@ -28,13 +29,13 @@ else
         notFound();  
     }
 }
-function frontEndSwitch(){
-    switch (true) 
+function frontEndSwitch(){                          // depending on the action the front switch will filter inputs and call the required controllers 
+    switch (true)                                       
     {
-        case$_GET['action'] == 'posts'  :
+        case$_GET['action'] == 'posts'  :          // Parent Front end controler in controller/frontend.php 
             renderPosts();
         break;
-        
+
         case$_GET['action'] == 'chapitre' AND isset($_GET['id']) :
             $postId= filter_input ( INPUT_GET,'id',FILTER_VALIDATE_INT);
             if(ispost($postId)) //filter if post exist => includes/functions.php
@@ -89,10 +90,10 @@ function frontEndSwitch(){
         break;
     }
 };
-function backEndSwitch(){
+function backEndSwitch(){             // Parent Back end controler in controller/backend.php 
     switch(true)
     {
-        case isset($_GET['chapitre']) AND !isset($_GET['db']) :
+        case isset($_GET['chapitre']) AND !isset($_GET['db']) : 
             $postId= filter_input ( INPUT_GET,'chapitre',FILTER_VALIDATE_INT);
             editPost($postId);
             break;
